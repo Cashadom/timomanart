@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martine — Accompagnement créatif & bien-être | Guadeloupe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== NOUVELLE PALETTE COULEUR (logo Martine) ===== */
+    :root {
+      --blanc: #F9F9F9;               /* fond doux */
+      --turquoise: #6BECD4;            /* bleu lagon / fraîcheur */
+      --corail: #F0776E;               /* orange rosé, chaleur humaine */
+      --lavande: #DEA7EC;               /* violet doux, créativité */
+      --vert-anis: #D0EC83;             /* vert tropical, bien-être */
+      --violet-signature: #9B6B9B;      /* violet plus soutenu, remplace #8A55E8 (plus doux, professionnel) */
+      --noir-doux: #1A1A18;
+      --gris-chaleureux: #6B6B68;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--blanc);
+      color: var(--noir-doux);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(249,249,249,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--lavande);
+      z-index: 1000;
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--violet-signature);
+      font-weight: 700;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo span { color: var(--corail); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--noir-doux);
+      font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--violet-signature); }
+    .nav-cta {
+      background: var(--violet-signature); color: white;
+      padding: 10px 22px; border-radius: 100px;
+      font-size: 0.85rem; font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--corail); transform: translateY(-1px); }
+
+    /* ===== HERO ===== */
+    #accueil {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px 5% 60px;
+      gap: 4rem;
+      background: linear-gradient(135deg, var(--blanc) 60%, var(--turquoise) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #accueil::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(222,167,236,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #FFF2E9; 
+      border: 1.5px solid var(--corail);
+      color: var(--noir-doux);
+      padding: 6px 16px; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 1.5rem;
+      animation: fadeSlideIn 0.6s ease both;
+    }
+    .hero-badge::before { content: '🌺'; }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      animation: fadeSlideIn 0.7s ease both;
+    }
+    .hero-title em { color: var(--violet-signature); font-style: italic; }
+    .hero-title .highlight {
+      background: var(--vert-anis);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-style: normal;
+      color: var(--noir-doux);
+    }
+    .hero-text {
+      font-size: 1.05rem; color: var(--gris-chaleureux);
+      line-height: 1.75; margin-bottom: 2.5rem;
+      max-width: 480px;
+      animation: fadeSlideIn 0.8s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeSlideIn 0.9s ease both;
+    }
+    .btn-primary {
+      background: var(--violet-signature); color: white;
+      padding: 14px 30px; border-radius: 100px;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(155,107,155,0.3);
+    }
+    .btn-primary:hover { background: var(--corail); transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--violet-signature);
+      color: var(--violet-signature);
+      padding: 12px 28px; border-radius: 100px;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover { background: var(--violet-signature); color: white; }
+
+    .hero-visual {
+      position: relative;
+      animation: fadeIn 1s ease both 0.3s;
+    }
+    .hero-card-main {
+      background: var(--violet-signature);
+      border-radius: 24px;
+      padding: 2.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .hero-card-main::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='200' cy='50' r='120' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='50' cy='250' r='80' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E") no-repeat center / cover;
+    }
+    .martine-emoji { font-size: 5rem; margin-bottom: 1rem; display: block; }
+    .hero-card-main h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; margin-bottom: 0.5rem;
+    }
+    .hero-card-main p { opacity: 0.85; font-size: 0.95rem; line-height: 1.6; }
+    .floating-badge {
+      position: absolute; top: 20px; right: -10px;
+      background: var(--vert-anis); color: var(--noir-doux);
+      padding: 8px 16px; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      animation: float 3s ease-in-out infinite;
+    }
+    .stats-row {
+      display: flex; gap: 1rem; margin-top: 1.5rem;
+    }
+    .stat-pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 16px; border-radius: 100px;
+      text-align: center;
+    }
+    .stat-pill strong { display: block; font-size: 1.2rem; }
+    .stat-pill span { font-size: 0.75rem; opacity: 0.8; }
+
+    /* ===== SERVICES (PRESTATIONS MARTINE) ===== */
+    #services {
+      padding: 100px 5%;
+      background: var(--blanc);
+    }
+    .section-label {
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--violet-signature);
+      margin-bottom: 0.75rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; max-width: 40px;
+      height: 2px; background: var(--violet-signature);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--gris-chaleureux); font-size: 1rem;
+      line-height: 1.7; max-width: 560px;
+      margin-bottom: 3.5rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--blanc);
+      border: 2px solid #EEDDF2;
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--corail);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { border-color: var(--lavande); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(155,107,155,0.12); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: var(--turquoise);
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.25rem;
+    }
+    .service-card.accent .service-icon { background: var(--lavande); }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; margin-bottom: 0.6rem;
+    }
+    .service-card p { font-size: 0.9rem; color: var(--gris-chaleureux); line-height: 1.65; }
+    .service-tag {
+      display: inline-block;
+      background: var(--vert-anis); color: #3F5A2B;
+      font-size: 0.72rem; font-weight: 600;
+      padding: 3px 10px; border-radius: 100px;
+      margin-top: 1rem;
+    }
+    .service-card.accent .service-tag { background: var(--corail); color: white; }
+
+    /* ===== AGENDA / ANIMATIONS ===== */
+    #animations {
+      padding: 100px 5%;
+      background: #f0f7fa;
+    }
+    .agenda-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: start;
+    }
+    .agenda-list { display: flex; flex-direction: column; gap: 1rem; }
+    .agenda-item {
+      background: white;
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      display: flex; gap: 1.2rem; align-items: center;
+      border: 1.5px solid transparent;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .agenda-item:hover { border-color: var(--turquoise); transform: translateX(4px); }
+    .agenda-item.active { border-color: var(--violet-signature); background: #F2E6F2; }
+    .agenda-date {
+      background: var(--violet-signature);
+      color: white;
+      border-radius: 12px;
+      padding: 8px 14px;
+      text-align: center;
+      min-width: 54px;
+    }
+    .agenda-date .day { font-size: 1.3rem; font-weight: 700; line-height: 1; }
+    .agenda-date .mois { font-size: 0.65rem; text-transform: uppercase; opacity: 0.85; }
+    .agenda-info h4 { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .agenda-info p { font-size: 0.82rem; color: var(--gris-chaleureux); }
+    .agenda-time {
+      margin-left: auto;
+      background: var(--vert-anis);
+      color: #3F5A2B;
+      font-size: 0.78rem; font-weight: 600;
+      padding: 4px 10px; border-radius: 100px;
+    }
+
+    /* Formulaire inscription animation */
+    .inscription-box {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem;
+      border: 2px solid var(--lavande);
+    }
+    .inscription-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin-bottom: 0.4rem;
+    }
+    .inscription-box p { color: var(--gris-chaleureux); font-size: 0.88rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; display: block; margin-bottom: 0.4rem; color: var(--noir-doux); }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #E0E0DC;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--blanc);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: var(--violet-signature); }
+    .form-submit {
+      width: 100%;
+      background: var(--violet-signature); color: white;
+      border: none; border-radius: 100px;
+      padding: 14px; font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      margin-top: 0.5rem;
+      transition: all 0.25s;
+    }
+    .form-submit:hover { background: var(--corail); transform: translateY(-1px); }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      padding: 100px 5%;
+      background: var(--blanc);
+    }
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: center;
+    }
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+    .contact-info p { color: var(--gris-chaleureux); line-height: 1.75; margin-bottom: 2rem; }
+    .contact-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-card {
+      display: flex; align-items: center; gap: 1rem;
+      background: #f5eaf5;
+      border-radius: 14px; padding: 1.1rem 1.4rem;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .contact-card:hover { background: var(--turquoise); color: var(--noir-doux); }
+    .contact-card-icon {
+      width: 44px; height: 44px;
+      background: var(--violet-signature);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+      color: white;
+    }
+    .contact-card-text strong { font-size: 0.85rem; display: block; }
+    .contact-card-text span { font-size: 0.82rem; color: var(--gris-chaleureux); }
+
+    /* Formulaire contact */
+    .contact-form {
+      background: var(--violet-signature);
+      border-radius: 24px;
+      padding: 2.5rem;
+      color: white;
+    }
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; margin-bottom: 0.4rem;
+    }
+    .contact-form p { opacity: 0.7; font-size: 0.88rem; margin-bottom: 1.5rem; }
+    .contact-form .form-group label { color: rgba(255,255,255,0.9); }
+    .contact-form .form-group input,
+    .contact-form .form-group select,
+    .contact-form .form-group textarea {
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: white;
+    }
+    .contact-form .form-group textarea {
+      width: 100%; padding: 11px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem; font-family: 'DM Sans', sans-serif;
+      resize: vertical; min-height: 90px; outline: none;
+      transition: border-color 0.2s;
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: white;
+    }
+    .contact-form .form-group input:focus,
+    .contact-form .form-group textarea:focus { border-color: var(--turquoise); }
+    .contact-form .form-submit { background: var(--turquoise); color: var(--noir-doux); font-weight: 700; }
+    .contact-form .form-submit:hover { background: var(--vert-anis); }
+
+    /* ===== TEMOIGNAGES ===== */
+    #temoignages {
+      padding: 100px 5%;
+      background: var(--violet-signature);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    #temoignages::before {
+      content: '❝';
+      position: absolute; right: 5%; top: 40px;
+      font-size: 12rem; opacity: 0.07;
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+    #temoignages .section-label { color: var(--vert-anis); }
+    #temoignages .section-label::after { background: var(--vert-anis); }
+    #temoignages .section-title { color: white; }
+    .temoignages-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .temoignage-card {
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      border-radius: 20px; padding: 1.8rem;
+      transition: all 0.3s;
+    }
+    .temoignage-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
+    .stars { color: var(--vert-anis); margin-bottom: 1rem; font-size: 1rem; }
+    .temoignage-card p { font-size: 0.92rem; line-height: 1.7; opacity: 0.9; margin-bottom: 1.2rem; }
+    .temoignage-author { display: flex; align-items: center; gap: 0.8rem; }
+    .author-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--corail);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .author-name strong { font-size: 0.88rem; display: block; }
+    .author-name span { font-size: 0.78rem; opacity: 0.65; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #2A2A2A;
+      color: rgba(255,255,255,0.7);
+      padding: 60px 5% 30px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .nav-logo { color: white; margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
+    .footer-col h4 {
+      font-weight: 700; color: white; font-size: 0.85rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--turquoise); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.82rem; }
+    .footer-badge {
+      background: var(--corail);
+      color: white; font-size: 0.78rem;
+      padding: 5px 14px; border-radius: 100px;
+    }
+
+    /* ===== MODALS ===== */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: none; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem;
+      width: 100%; max-width: 480px;
+      position: relative;
+      animation: modalIn 0.3s ease;
+    }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: var(--gris-chaleureux); border: none;
+      width: 36px; height: 36px; border-radius: 50%;
+      cursor: pointer; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: var(--lavande); }
+    .modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; margin-bottom: 0.4rem;
+    }
+    .modal p.modal-sub { color: var(--gris-chaleureux); font-size: 0.88rem; margin-bottom: 1.5rem; }
+    #toast {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: var(--violet-signature); color: white;
+      padding: 12px 22px; border-radius: 100px;
+      font-size: 0.88rem; font-weight: 600;
+      box-shadow: 0 8px 24px rgba(155,107,155,0.4);
+      z-index: 3000;
+      transform: translateY(100px); opacity: 0;
+      transition: all 0.4s;
+    }
+    #toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
+      #accueil { grid-template-columns: 1fr; padding: 100px 4% 60px; gap: 2.5rem; }
+      .agenda-layout, .contact-layout, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-card-main { min-height: 260px; }
+      .stats-row { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">🌺 Martine<span>✦</span>Seniors</div>
+  <ul class="nav-links">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#animations">Animations</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Nous contacter</a>
+</nav>
+
+<!-- HERO -->
+<section id="accueil">
+  <div class="hero-content">
+    <div class="hero-badge">Accompagnement créatif · Guadeloupe</div>
+    <h1 class="hero-title">
+      Accompagner les aînés<br>
+      avec <em>créativité</em><br>
+      au <span class="highlight">quotidien</span>
+    </h1>
+    <p class="hero-text">
+      Martine propose des animations artistiques et un accompagnement bienveillant 
+      pour rompre l’isolement, stimuler la mémoire et partager des instants précieux.
+    </p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Découvrir les ateliers</a>
+      <button onclick="openModal('modal-rdv')" class="btn-secondary">Prendre RDV</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-main">
+      <div class="floating-badge">✨ bienveillance & créativité</div>
+      <span class="martine-emoji">👩🏾‍🎨</span>
+      <h3>Martine, votre accompagnatrice</h3>
+      <p>Professionnelle diplômée, passionnée par le bien-être des aînés en Guadeloupe.</p>
+      <div class="stats-row">
+        <div class="stat-pill"><strong>8 ans</strong><span>d'expérience</span></div>
+        <div class="stat-pill"><strong>120+</strong><span>familles aidées</span></div>
+        <div class="stat-pill"><strong>4.9⭐</strong><span>satisfaction</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (PRESTATIONS MARTINE détaillées) -->
+<section id="services">
+  <div class="section-label">Ce que Martine propose</div>
+  <h2 class="section-title">Des prestations sur mesure<br>pour vos aînés</h2>
+  <p class="section-sub">Chaque moment est unique. Martine adapte ses interventions pour allier créativité, bien-être et lien social.</p>
+
+  <div class="services-grid">
+    <div class="service-card fade-in-up" onclick="openServiceDetail('ateliers-creatifs')">
+      <div class="service-icon">🎨</div>
+      <h3>Ateliers créatifs & artistiques</h3>
+      <p>Peinture, dessin, collage, artisanat local – éveil des sens et valorisation personnelle.</p>
+      <span class="service-tag">stimulation & plaisir</span>
+    </div>
+    <div class="service-card fade-in-up accent" onclick="openServiceDetail('stimulation-cognitive')">
+      <div class="service-icon">🧠</div>
+      <h3>Stimulation cognitive</h3>
+      <p>Jeux de mémoire, activités d'attention, discussions thématiques – entretenir la mémoire.</p>
+      <span class="service-tag">mémoire & lien</span>
+    </div>
+    <div class="service-card fade-in-up" onclick="openServiceDetail('bien-etre-gym')">
+      <div class="service-icon">🧘‍♀️</div>
+      <h3>Bien-être & gym douce</h3>
+      <p>Gym douce, relaxation, mobilisation adaptée – maintien de l'autonomie et détente.</p>
+      <span class="service-tag">corps & sérénité</span>
+    </div>
+    <div class="service-card fade-in-up accent" onclick="openServiceDetail('sorties-adaptees')">
+      <div class="service-icon">🚗</div>
+      <h3>Sorties adaptées</h3>
+      <p>Promenade, sortie culturelle, restaurant – lien social et ouverture sur l'extérieur.</p>
+      <span class="service-tag">évasion & partage</span>
+    </div>
+    <div class="service-card fade-in-up" onclick="openServiceDetail('lien-social')">
+      <div class="service-icon">💬</div>
+      <h3>Animation & lien social</h3>
+      <p>Présence humaine, jeux, discussions, soutien moral – répit pour les aidants.</p>
+      <span class="service-tag">compagnie & écoute</span>
+    </div>
+    <div class="service-card fade-in-up accent" onclick="openServiceDetail('urgence')">
+      <div class="service-icon">📞</div>
+      <h3>Ligne d'urgence</h3>
+      <p>Disponibilité 7j/7, numéro direct, intervention rapide en cas de besoin.</p>
+      <span class="service-tag">sécurité 24h/24</span>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATIONS (agenda) -->
+<section id="animations">
+  <div class="section-label">Programme des activités</div>
+  <h2 class="section-title">Agenda des animations</h2>
+  <p class="section-sub">Des activités variées pour stimuler le corps et l'esprit, dans la bonne humeur !</p>
+
+  <div class="agenda-layout">
+    <div class="agenda-list fade-in-up">
+      <div class="agenda-item active">
+        <div class="agenda-date"><div class="day">05</div><div class="mois">Mars</div></div>
+        <div class="agenda-info">
+          <h4>🎵 Musique & Chants Antillais</h4>
+          <p>Chansons traditionnelles de Guadeloupe, gwoka, biguine</p>
+        </div>
+        <span class="agenda-time">10h00</span>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-date"><div class="day">07</div><div class="mois">Mars</div></div>
+        <div class="agenda-info">
+          <h4>🧠 Jeux de mémoire & Dominos</h4>
+          <p>Stimulation cognitive en groupe, ambiance conviviale</p>
+        </div>
+        <span class="agenda-time">14h30</span>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-date"><div class="day">10</div><div class="mois">Mars</div></div>
+        <div class="agenda-info">
+          <h4>🌿 Atelier jardinage tropical</h4>
+          <p>Plantes médicinales, herbes aromatiques antillaises</p>
+        </div>
+        <span class="agenda-time">09h00</span>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-date"><div class="day">12</div><div class="mois">Mars</div></div>
+        <div class="agenda-info">
+          <h4>✂️ Créations manuelles</h4>
+          <p>Artisanat local, travaux manuels créatifs</p>
+        </div>
+        <span class="agenda-time">15h00</span>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-date"><div class="day">15</div><div class="mois">Mars</div></div>
+        <div class="agenda-info">
+          <h4>🧘 Gym douce & Relaxation</h4>
+          <p>Exercices adaptés, respiration, bien-être corporel</p>
+        </div>
+        <span class="agenda-time">11h00</span>
+      </div>
+    </div>
+
+    <div class="inscription-box fade-in-up">
+      <h3>S'inscrire à une animation</h3>
+      <p>Réservez votre place pour une activité. Les places sont limitées !</p>
+      <div class="form-group">
+        <label>Nom et prénom</label>
+        <input type="text" id="insc-nom" placeholder="Marie Dupont" />
+      </div>
+      <div class="form-group">
+        <label>Téléphone</label>
+        <input type="tel" id="insc-tel" placeholder="0590 XX XX XX" />
+      </div>
+      <div class="form-group">
+        <label>Choisir une animation</label>
+        <select id="insc-activite">
+          <option>🎵 Musique & Chants Antillais — 5 mars</option>
+          <option>🧠 Jeux de mémoire — 7 mars</option>
+          <option>🌿 Atelier jardinage — 10 mars</option>
+          <option>✂️ Créations manuelles — 12 mars</option>
+          <option>🧘 Gym douce — 15 mars</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="inscrireAnimation()">Confirmer mon inscription ✓</button>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section id="temoignages">
+  <div class="section-label">Ils nous font confiance</div>
+  <h2 class="section-title">Ce que disent les familles</h2>
+
+  <div class="temoignages-grid">
+    <div class="temoignage-card fade-in-up">
+      <div class="stars">★★★★★</div>
+      <p>Martine est d'une gentillesse extraordinaire avec ma mère. Elle lui apporte joie et sérénité chaque jour. Nous sommes tellement soulagés en famille.</p>
+      <div class="temoignage-author">
+        <div class="author-avatar">👨🏾</div>
+        <div class="author-name">
+          <strong>Jean-Claude M.</strong>
+          <span>Famille d'Abymes</span>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage-card fade-in-up">
+      <div class="stars">★★★★★</div>
+      <p>Grâce aux animations, mon père a retrouvé le sourire. Les ateliers musique antillaise lui rappellent sa jeunesse. Merci Martine du fond du cœur !</p>
+      <div class="temoignage-author">
+        <div class="author-avatar">👩🏽</div>
+        <div class="author-name">
+          <strong>Sandra K.</strong>
+          <span>Famille de Pointe-à-Pitre</span>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage-card fade-in-up">
+      <div class="stars">★★★★★</div>
+      <p>Un service professionnel et humain. Martine respecte l'intimité et les habitudes de grand-mère. Elle est devenue comme un membre de la famille.</p>
+      <div class="temoignage-author">
+        <div class="author-avatar">🧑🏾</div>
+        <div class="author-name">
+          <strong>Patrick L.</strong>
+          <span>Famille de Basse-Terre</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Nous joindre</div>
+
+  <div class="contact-layout">
+    <div class="contact-info fade-in-up">
+      <h2 class="section-title">Parlons de votre situation</h2>
+      <p>Chaque besoin est unique. Contactez Martine pour un premier échange gratuit et sans engagement. Elle sera heureuse de vous répondre.</p>
+
+      <div class="contact-cards">
+        <div class="contact-card" onclick="callMartine()">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-text">
+            <strong>Appelez directement</strong>
+            <span>0590 88 77 66 — Lun–Sam 8h–19h</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div class="contact-card-text">
+            <strong>Zone d'intervention</strong>
+            <span>Pointe-à-Pitre, Abymes, Baie-Mahault, Basse-Terre et alentours</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div class="contact-card-text">
+            <strong>Par email</strong>
+            <span>martine.seniors@guadeloupe.fr</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🕐</div>
+          <div class="contact-card-text">
+            <strong>Horaires</strong>
+            <span>Disponible 7j/7 — Urgences 24h/24</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form fade-in-up">
+      <h3>Envoyer un message</h3>
+      <p>Réponse garantie sous 24h</p>
+      <div class="form-group">
+        <label>Votre nom</label>
+        <input type="text" id="c-nom" placeholder="Prénom et nom" />
+      </div>
+      <div class="form-group">
+        <label>Téléphone</label>
+        <input type="tel" id="c-tel" placeholder="0590 XX XX XX" />
+      </div>
+      <div class="form-group">
+        <label>Objet de votre demande</label>
+        <select id="c-objet">
+          <option>Renseignement sur les services</option>
+          <option>Demande de devis</option>
+          <option>Inscription animation</option>
+          <option>Urgence / besoin immédiat</option>
+          <option>Partenariat / Professionnel</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Votre message</label>
+        <textarea id="c-message" placeholder="Décrivez votre situation..."></textarea>
+      </div>
+      <button class="form-submit" onclick="envoyerMessage()">Envoyer le message 🌿</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">🌺 Martine<span style="color:var(--corail)">✦</span>Seniors</div>
+      <p>Service d'aide et d'accompagnement créatif à domicile pour les personnes âgées en Guadeloupe. Parce que chaque aîné mérite bienveillance et créativité.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Ateliers créatifs</a></li>
+        <li><a href="#">Stimulation cognitive</a></li>
+        <li><a href="#">Gym douce</a></li>
+        <li><a href="#">Sorties adaptées</a></li>
+        <li><a href="#">Lien social</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Infos pratiques</h4>
+      <ul>
+        <li><a href="#">Tarifs & Aides</a></li>
+        <li><a href="#">Zone d'intervention</a></li>
+        <li><a href="#">Prendre rendez-vous</a></li>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">APA & allocations</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Martine Seniors — Guadeloupe · Tous droits réservés</p>
+    <span class="footer-badge">🌺 Service agréé bien-être</span>
+  </div>
+</footer>
+
+<!-- MODAL RDV -->
+<div class="modal-overlay" id="modal-rdv" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-rdv')">✕</button>
+    <h3>Prendre rendez-vous</h3>
+    <p class="modal-sub">Martine vous rappellera dans les plus brefs délais.</p>
+    <div class="form-group"><label>Nom et prénom</label><input type="text" placeholder="Marie Dupont" /></div>
+    <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="0590 XX XX XX" /></div>
+    <div class="form-group"><label>Date souhaitée</label><input type="date" /></div>
+    <div class="form-group">
+      <label>Type d'aide recherchée</label>
+      <select>
+        <option>Ateliers créatifs</option>
+        <option>Stimulation cognitive</option>
+        <option>Gym douce</option>
+        <option>Sorties adaptées</option>
+        <option>Autre</option>
+      </select>
+    </div>
+    <button class="form-submit" onclick="confirmerRDV()">Confirmer la demande ✓</button>
+  </div>
+</div>
+
+<!-- MODAL SERVICE DETAIL -->
+<div class="modal-overlay" id="modal-service" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-service')">✕</button>
+    <h3 id="modal-service-title">Service</h3>
+    <p class="modal-sub" id="modal-service-sub"></p>
+    <div id="modal-service-content"></div>
+    <button class="form-submit" onclick="openModal('modal-rdv'); closeModal('modal-service')">Demander ce service</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast">✅ Envoyé avec succès !</div>
+
+<script>
+  // Services details data (nouvelle version avec prestations détaillées)
+  const services = {
+    'ateliers-creatifs': {
+      title: '🎨 Ateliers créatifs & artistiques',
+      sub: 'Exprimer sa créativité, stimuler l’imaginaire',
+      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li>🖌️ Peinture, dessin, collage adaptés</li>
+        <li>🧵 Créations manuelles (artisanat local)</li>
+        <li>🎭 Expression artistique ludique</li>
+        <li>🖼️ Valorisation des œuvres réalisées</li>
+        <li>✨ Favorise l’estime de soi et la joie</li>
+      </ul>`
+    },
+    'stimulation-cognitive': {
+      title: '🧠 Stimulation cognitive',
+      sub: 'Entretenir la mémoire et l’attention en douceur',
+      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li>🧩 Jeux de mémoire adaptés</li>
+        <li>🗣️ Discussions thématiques enrichissantes</li>
+        <li>🔍 Activités d’attention et de concentration</li>
+        <li>📖 Ateliers « souvenirs » et partage d’histoires</li>
+        <li>🧠 Prévention du déclin cognitif</li>
+      </ul>`
+    },
+    'bien-etre-gym': {
+      title: '🧘 Bien-être & gym douce',
+      sub: 'Mobilisation en douceur, détente et autonomie',
+      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li>🤸 Mouvements adaptés, assis ou debout</li>
+        <li>🌬️ Exercices de respiration et relaxation</li>
+        <li>🦵 Maintien de la mobilité et de l’équilibre</li>
+        <li>💆 Massages doux / auto-massages</li>
+        <li>😌 Confiance corporelle et apaisement</li>
+      </ul>`
+    },
+    'sorties-adaptees': {
+      title: '🚗 Sorties adaptées',
+      sub: 'Ouverture sur l’extérieur, lien social',
+      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li>🏞️ Promenade en bord de mer / parc</li>
+        <li>🎭 Visite culturelle ou exposition</li>
+        <li>🍽️ Déjeuner au restaurant</li>
+        <li>🛍️ Accompagnement courses / marché</li>
+        <li>🤝 Rompre l’isolement, partager un moment</li>
+      </ul>`
+    },
+    'lien-social': {
+      title: '💬 Animation & lien social',
+      sub: 'Présence humaine, soutien moral et répit',
+      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li>💛 Moments d’écoute et de partage</li>
+        <li>🎲 Jeux de société, cartes, dominos</li>
+        <li>📞 Aide pour appels aux proches</li>
+        <li>🧑‍🤝‍🧑 Rompre la solitude au quotidien</li>
+        <li>🕊️ Réconfort et bien-être émotionnel</li>
+      </ul>`
+    },
+    'urgence': {
+      title: '📞 Ligne d’urgence',
+      sub: 'Disponible 7j/7 pour toute situation urgente',
+      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li>🆘 Numéro direct joignable 24h/24</li>
+        <li>⚡ Intervention rapide en Guadeloupe</li>
+        <li>🏥 Coordination avec les secours si nécessaire</li>
+        <li>👨‍👩‍👧 Alerte famille immédiate</li>
+        <li>🔒 Sécurité et tranquillité d’esprit garanties</li>
+      </ul>`
+    }
+  };
+
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOutside(e) {
+    if (e.target.classList.contains('modal-overlay')) {
+      e.target.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function openServiceDetail(key) {
+    const s = services[key];
+    document.getElementById('modal-service-title').textContent = s.title;
+    document.getElementById('modal-service-sub').textContent = s.sub;
+    document.getElementById('modal-service-content').innerHTML = s.content;
+    openModal('modal-service');
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  function inscrireAnimation() {
+    const nom = document.getElementById('insc-nom').value.trim();
+    const tel = document.getElementById('insc-tel').value.trim();
+    const activite = document.getElementById('insc-activite').value;
+    if (!nom || !tel) { showToast('⚠️ Veuillez remplir tous les champs'); return; }
+    showToast('🎉 Inscription confirmée pour ' + activite.split('—')[0].trim() + ' !');
+    document.getElementById('insc-nom').value = '';
+    document.getElementById('insc-tel').value = '';
+  }
+
+  function confirmerRDV() {
+    showToast('📅 Demande de RDV envoyée ! Martine vous rappellera.');
+    closeModal('modal-rdv');
+  }
+
+  function envoyerMessage() {
+    const nom = document.getElementById('c-nom').value.trim();
+    const msg = document.getElementById('c-message').value.trim();
+    if (!nom || !msg) { showToast('⚠️ Veuillez remplir votre nom et message'); return; }
+    showToast('✅ Message envoyé ! Réponse sous 24h.');
+    document.getElementById('c-nom').value = '';
+    document.getElementById('c-tel').value = '';
+    document.getElementById('c-message').value = '';
+  }
+
+  function callMartine() {
+    showToast('📞 Numéro : 0590 88 77 66');
+  }
+
+  // Agenda item click
+  document.querySelectorAll('.agenda-item').forEach(item => {
+    item.addEventListener('click', function() {
+      document.querySelectorAll('.agenda-item').forEach(i => i.classList.remove('active'));
+      this.classList.add('active');
+      const activite = this.querySelector('h4').textContent;
+      document.getElementById('insc-activite').selectedIndex =
+        [...document.getElementById('insc-activite').options].findIndex(o => o.text.includes(activite.substring(3, 15)));
+    });
+  });
+
+  // Intersection Observer for animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

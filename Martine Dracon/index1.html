@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ti Moman Art — Créativité & bien‑être pour seniors | Guadeloupe</title>
+  <!-- Google Fonts : doux, lisible, chaleureux -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ===== VARIABLES BRANDING TI MOMAN ART ===== */
+    :root {
+      --jaune-soleil: #F4B942;        /* maîtresse : énergie, créativité */
+      --vert-doux: #6FAF6A;            /* équilibre, nature, apaisement */
+      --bleu-lagon: #3FA7B3;           /* confiance, lien, respiration */
+      --corail: #E76F51;               /* émotion, proximité, chaleur caraïbe */
+      --sable: #F5EFE6;                /* fond doux, élégant */
+      --blanc-casse: #FAF7F2;
+      --noir-doux: #2A3B3C;            /* texte, légèrement adouci */
+      --gris-chaleureux: #5C6D6E;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--sable);
+      color: var(--noir-doux);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ===== TYPO & UTILS ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--corail);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 50px;
+      height: 2px;
+      background: var(--corail);
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--noir-doux);
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--gris-chaleureux);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(245, 239, 230, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--jaune-soleil);
+      z-index: 1000;
+      padding: 0 5%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--corail);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-logo span {
+      color: var(--jaune-soleil);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--noir-doux);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--corail); }
+
+    .nav-cta {
+      background: var(--jaune-soleil);
+      color: var(--noir-doux);
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(244,185,66,0.3);
+      transition: 0.2s;
+    }
+    .nav-cta:hover {
+      background: #e5a83a;
+      transform: translateY(-2px);
+    }
+
+    /* ===== HERO ===== */
+    #accueil {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem;
+      padding: 100px 5% 60px;
+      background: linear-gradient(145deg, var(--sable) 30%, #fae9d7 100%);
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(239,175,45,0.12);
+      border-left: 5px solid var(--jaune-soleil);
+      padding: 6px 18px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--corail);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--noir-doux);
+    }
+    .hero-title em {
+      color: var(--corail);
+      font-style: italic;
+      background: linear-gradient(145deg, var(--jaune-soleil) 0%, #fadcb0 80%);
+      padding: 0 8px;
+      border-radius: 4px;
+    }
+
+    .hero-text {
+      font-size: 1.1rem;
+      color: var(--gris-chaleureux);
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .btn-primary {
+      background: var(--jaune-soleil);
+      color: var(--noir-doux);
+      border: none;
+      padding: 15px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 8px 16px rgba(244,185,66,0.25);
+      transition: 0.25s;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #efaf2d;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--bleu-lagon);
+      color: var(--bleu-lagon);
+      padding: 13px 30px;
+      border-radius: 60px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      background: var(--bleu-lagon);
+      color: white;
+    }
+
+    .hero-visual {
+      background: var(--blanc-casse);
+      border-radius: 36px;
+      padding: 2rem 2rem 2.5rem;
+      box-shadow: 0 25px 40px -15px rgba(0,0,0,0.15);
+      border: 2px solid white;
+      text-align: center;
+      position: relative;
+    }
+    .hero-emoji {
+      font-size: 4.5rem;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 8px 10px var(--corail));
+    }
+    .hero-visual h3 {
+      font-size: 1.5rem;
+      color: var(--corail);
+    }
+    .hero-visual p {
+      color: var(--gris-chaleureux);
+      max-width: 260px;
+      margin: 0.5rem auto 1.2rem;
+    }
+    .floating-tag {
+      background: var(--vert-doux);
+      color: white;
+      font-size: 0.8rem;
+      padding: 5px 16px;
+      border-radius: 40px;
+      position: absolute;
+      top: -12px; right: 20px;
+    }
+
+    /* ===== LE PROJET (MARTINE) ===== */
+    #projet {
+      padding: 100px 5%;
+      background: var(--blanc-casse);
+    }
+    .projet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .projet-img {
+      background: linear-gradient(145deg, var(--vert-doux)20%, var(--bleu-lagon)80%);
+      border-radius: 32px;
+      padding: 2rem;
+      color: white;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 16px 30px rgba(111,175,106,0.2);
+    }
+    .projet-img span { font-size: 4rem; }
+    .projet-img h3 { font-size: 2rem; color: white; }
+
+    /* ===== ACTIVITÉS (avec emplacements images) ===== */
+    #activites {
+      padding: 100px 5%;
+      background: var(--sable);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .activity-card {
+      background: var(--blanc-casse);
+      border-radius: 32px;
+      padding: 0 0 2rem 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      transition: 0.25s ease;
+      border: 1px solid rgba(244,185,66,0.2);
+    }
+    .activity-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--corail);
+    }
+    .img-placeholder {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(145deg, #f8e5cf, #ffd7b0);
+      border-radius: 32px 32px 24px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: var(--corail);
+      font-weight: 500;
+      border-bottom: 3px solid var(--jaune-soleil);
+    }
+    .img-placeholder span { background: rgba(255,255,255,0.6); padding: 4px 12px; border-radius: 40px; font-size: 0.8rem; margin-left: 8px; }
+    .card-content { padding: 1.5rem 1.5rem 0; }
+    .card-content h3 { color: var(--noir-doux); font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .card-badge {
+      background: var(--vert-doux);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 30px;
+      display: inline-block;
+      margin: 0.8rem 0 0.2rem;
+    }
+    .benefice {
+      color: var(--bleu-lagon);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-top: 0.8rem;
+    }
+
+    /* ===== LES BIENFAITS ===== */
+    #bienfaits {
+      padding: 100px 5%;
+      background: var(--vert-doux);
+      color: white;
+    }
+    #bienfaits .section-label { color: var(--jaune-soleil); }
+    #bienfaits .section-label::after { background: var(--jaune-soleil); }
+    .bienfaits-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .bienfait-item {
+      background: rgba(255,255,255,0.1);
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    .bienfait-item h4 { font-size: 1.3rem; margin: 0.8rem 0; }
+
+    /* ===== ZONE (carte simplifiée) ===== */
+    #zone {
+      padding: 80px 5%;
+      background: var(--blanc-casse);
+    }
+    .carte-simple {
+      background: #d2e7e0;
+      border-radius: 48px;
+      padding: 4rem 2rem;
+      text-align: center;
+      background-image: radial-gradient(circle at 20% 40%, #b3d8cf 0%, transparent 30%);
+      border: 3px dashed var(--bleu-lagon);
+      font-size: 1.2rem;
+    }
+
+    /* ===== TEMOIGNAGES ===== */
+    #temoignages {
+      padding: 100px 5%;
+      background: var(--sable);
+    }
+    .temoignage-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem;
+      border-left: 8px solid var(--corail);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+      max-width: 600px;
+    }
+    .stars { color: var(--jaune-soleil); font-size: 1.2rem; letter-spacing: 4px; }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      padding: 100px 5%;
+      background: linear-gradient(135deg, var(--sable) 0%, #f7e2cf 100%);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+    .contact-form { background: white; padding: 2.5rem; border-radius: 32px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--noir-doux);
+      color: var(--sable);
+      padding: 50px 5% 30px;
+    }
+    .footer-logo { font-family: 'Playfair Display'; font-size: 1.8rem; color: var(--jaune-soleil); }
+
+    /* ===== MODAL / TOAST ===== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); z-index: 2000;
+      display: none; align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: white; border-radius: 48px; padding: 2.5rem; max-width: 480px; width: 100%;
+    }
+    #toast {
+      position: fixed; bottom: 2rem; right: 2rem; background: var(--vert-doux); color: white;
+      padding: 14px 28px; border-radius: 60px; font-weight: 600; box-shadow: 0 6px 24px rgba(111,175,106,0.5);
+      transition: 0.3s; transform: translateY(100px); opacity: 0;
+    }
+    #toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      #accueil, .projet-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span>☀️</span> Ti Moman Art</div>
+  <ul class="nav-links">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#projet">Le projet</a></li>
+    <li><a href="#activites">Activités</a></li>
+    <li><a href="#bienfaits">Bienfaits</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Prendre contact</a>
+</nav>
+
+<!-- HERO -->
+<section id="accueil">
+  <div>
+    <div class="hero-badge">👵🏾 Guadeloupe · Bien‑être & créativité</div>
+    <h1 class="hero-title">Donner de la <em>couleur</em> aux moments de vie</h1>
+    <p class="hero-text">Animation artistique et bien‑être à domicile pour les seniors. Rompre l’isolement grâce à la créativité et au lien humain.</p>
+    <div>
+      <a href="#contact" class="btn-primary">Prendre contact</a>
+      <button onclick="openModal('modal-contact')" class="btn-secondary" style="margin-left: 1rem;">☎️ Rappel gratuit</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-tag">⭐ confiance & douceur</div>
+    <div class="hero-emoji">👩🏾‍🎨</div>
+    <h3>Martine</h3>
+    <p>Fondatrice de Ti Moman Art, artiste et accompagnatrice formée.</p>
+    <div style="display: flex; gap: 0.6rem; justify-content: center;">
+      <span style="background: var(--vert-doux); padding:4px 12px; border-radius:40px; color:white;">🧘 8 ans d'expérience</span>
+    </div>
+  </div>
+</section>
+
+<!-- LE PROJET (MARTINE) -->
+<section id="projet">
+  <div class="section-label">🌿 qui est Martine</div>
+  <div class="projet-grid">
+    <div>
+      <h2 class="section-title">Un projet né du cœur et de la culture guadeloupéenne</h2>
+      <p class="section-sub">Martine, artiste et aidante naturelle, crée Ti Moman Art pour allier créativité, bien-être et lien social auprès des aînés. Chaque atelier est imprégné de la chaleur des îles.</p>
+      <p>🎓 Diplômée en animation socioculturelle · formée aux ateliers mémoire et gym douce.</p>
+    </div>
+    <div class="projet-img">
+      <span>🌺</span>
+      <h3>Martine</h3>
+      <p>“ redonner le sourire par l'art et la présence ”</p>
+    </div>
+  </div>
+</section>
+
+<!-- LES ACTIVITÉS (avec emplacements images) -->
+<section id="activites">
+  <div class="section-label">🎨 ateliers sur mesure</div>
+  <h2 class="section-title">Des activités qui font du bien</h2>
+  <p class="section-sub">Chaque atelier est adapté au rythme de la personne, à son domicile en Guadeloupe.</p>
+
+  <div class="cards-grid">
+    <!-- 1 · Ateliers créatifs -->
+    <div class="activity-card">
+      <div class="img-placeholder">🖌️ img1.png <span>peinture douce</span></div>
+      <div class="card-content">
+        <h3>Ateliers créatifs & artistiques</h3>
+        <p>Peinture, dessin, collage, artisanat local. Éveil des sens et fierté de créer.</p>
+        <div class="card-badge">stimulation cognitive</div>
+        <div class="benefice">✨ valorisation & plaisir</div>
+      </div>
+    </div>
+    <!-- 2 · Stimulation cognitive -->
+    <div class="activity-card">
+      <div class="img-placeholder">🧠 img2.png <span>jeux mémoire</span></div>
+      <div class="card-content">
+        <h3>Stimulation cognitive</h3>
+        <p>Jeux de mémoire, activités d’attention, discussions thématiques pour entretenir la matière grise.</p>
+        <div class="card-badge">prévention isolement</div>
+        <div class="benefice">✨ mémoire & lien</div>
+      </div>
+    </div>
+    <!-- 3 · Gym douce & bien-être -->
+    <div class="activity-card">
+      <div class="img-placeholder">🧘🏾 img3.png <span>gym douce</span></div>
+      <div class="card-content">
+        <h3>Bien-être & gym douce</h3>
+        <p>Mobilisation en douceur, respiration, relaxation adaptée. Maintien de l’autonomie.</p>
+        <div class="card-badge">corps & détente</div>
+        <div class="benefice">✨ confiance corporelle</div>
+      </div>
+    </div>
+    <!-- 4 · Sorties adaptées -->
+    <div class="activity-card">
+      <div class="img-placeholder">🌊 img4.png <span>sortie lagon</span></div>
+      <div class="card-content">
+        <h3>Sorties adaptées</h3>
+        <p>Promenade, sortie culturelle, restaurant. Accompagnement personnalisé pour rompre l’isolement.</p>
+        <div class="card-badge">lien social</div>
+        <div class="benefice">✨ ouverture & joie</div>
+      </div>
+    </div>
+    <!-- 5 · Animation & lien social -->
+    <div class="activity-card">
+      <div class="img-placeholder">💛 img5.png <span>partage</span></div>
+      <div class="card-content">
+        <h3>Animation & lien social</h3>
+        <p>Présence humaine, jeux, discussions, échanges autour d’un café. Réconfort et sourires.</p>
+        <div class="card-badge">soutien moral</div>
+        <div class="benefice">✨ répit pour les aidants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LES BIENFAITS -->
+<section id="bienfaits">
+  <div class="section-label">❤️ pourquoi ça change tout</div>
+  <h2 class="section-title">Les bienfaits pour vos aînés</h2>
+  <div class="bienfaits-list">
+    <div class="bienfait-item">🤝 Rompre l’isolement</div>
+    <div class="bienfait-item">🧠 Stimuler la mémoire</div>
+    <div class="bienfait-item">🏆 Valoriser l’estime de soi</div>
+    <div class="bienfait-item">🧘 Soutenir les aidants</div>
+  </div>
+</section>
+
+<!-- ZONE D'INTERVENTION -->
+<section id="zone">
+  <div class="section-label">📍 où sommes‑nous</div>
+  <h2 class="section-title">Toute la Guadeloupe</h2>
+  <div class="carte-simple">
+    🗺️ Carte interactive — img6.png (Pointe-à-Pitre, Basse-Terre, Abymes, Baie-Mahault …)<br>
+    <span style="background: white; padding: 0.2rem 1.2rem; border-radius: 60px;">intervention à domicile</span>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="temoignages">
+  <div class="section-label">⭐ ils nous font confiance</div>
+  <h2 class="section-title">Paroles de familles</h2>
+  <div style="display: grid; gap: 2rem; margin-top: 2rem;">
+    <div class="temoignage-card">
+      <div class="stars">★★★★★</div>
+      <p>« Martine a redonné le sourire à ma maman. Les ateliers créatifs sont devenus son moment préféré de la semaine. »</p>
+      <strong>— Sandrine, Les Abymes</strong>
+    </div>
+    <div class="temoignage-card">
+      <div class="stars">★★★★★</div>
+      <p>« Un vrai bol d’air pour mon père, et pour nous aidants. Professionnelle et tellement humaine. »</p>
+      <strong>— Marc, Basse-Terre</strong>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">📞 échangeons sans engagement</div>
+  <div class="contact-grid">
+    <div>
+      <h2 class="section-title">Contactez Martine</h2>
+      <p>Réponse sous 24h, premier échange gratuit et chaleureux.</p>
+      <p>☀️ Tél : 0590 88 77 66<br>📧 bonjour@timomanart.gp</p>
+      <a href="#" class="whatsapp-btn"><span>📱</span> WhatsApp direct</a>
+      <p style="margin-top: 2rem;"><strong>Horaires :</strong> 7j/7 · 8h–19h</p>
+    </div>
+    <div class="contact-form">
+      <h3>Formulaire simple</h3>
+      <div class="form-group"><label>Nom</label><input type="text" placeholder="Votre nom" id="contactNom"></div>
+      <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="0590..." id="contactTel"></div>
+      <div class="form-group"><label>Message</label><textarea rows="3" id="contactMsg">Bonjour, je souhaite en savoir plus...</textarea></div>
+      <button class="btn-primary" style="width:100%;" onclick="envoyerContact()">Envoyer</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">☀️ Ti Moman Art</div>
+  <p style="margin: 1rem 0; max-width: 500px;">La création au cœur de la vie — service d’animation et bien‑être pour seniors en Guadeloupe.</p>
+  <hr style="opacity:0.2;">
+  <p style="text-align:center; margin-top:2rem;">© 2025 Ti Moman Art · Tous droits réservés · Mentions légales</p>
+</footer>
+
+<!-- MODAL CONTACT RAPIDE -->
+<div class="modal-overlay" id="modal-contact" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" style="float:right; border:none; background:none; font-size:1.4rem;" onclick="closeModal('modal-contact')">✕</button>
+    <h3>📞 Rappel gratuit</h3>
+    <p>Laissez votre numéro, Martine vous appelle dans la journée.</p>
+    <input type="tel" placeholder="0590 XX XX XX" style="width:100%; padding:1rem; border-radius:60px; border:1px solid var(--jaune-soleil); margin:1rem 0;">
+    <button class="btn-primary" onclick="closeModal('modal-contact'); showToast('Merci, Martine vous contactera très vite')">Valider</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast">✨ message envoyé</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeModalOutside(e) {
+    if (e.target.classList.contains('modal-overlay')) {
+      e.target.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+  function envoyerContact() {
+    const nom = document.getElementById('contactNom')?.value;
+    if(!nom) { showToast('Indiquez votre nom'); return; }
+    showToast('✅ Message envoyé ! réponse rapide');
+    document.getElementById('contactNom').value = '';
+    document.getElementById('contactTel').value = '';
+    document.getElementById('contactMsg').value = '';
+  }
+
+  // Observer fade-in léger (optionnel)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => e.target.classList.add('visible'));
+  }, {threshold:0.1});
+  document.querySelectorAll('.activity-card, .temoignage-card, .bienfait-item').forEach(el => observer.observe(el));
+</script>
+
+<!-- petits styles pour observer -->
+<style>
+  .activity-card, .temoignage-card, .bienfait-item { transition: opacity 0.4s, transform 0.3s; opacity: 0.95; transform: translateY(10px); }
+  .activity-card.visible, .temoignage-card.visible, .bienfait-item.visible { opacity: 1; transform: translateY(0); }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { font-weight: 600; font-size: 0.85rem; }
+  .form-group input, .form-group textarea { width: 100%; padding: 0.9rem; border-radius: 30px; border: 1px solid #ddd; font-family: inherit; }
+</style>
+</body>
+</html>
