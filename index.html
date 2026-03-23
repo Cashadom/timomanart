@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ti Moman Art — La création au cœur de la vie | Guadeloupe</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --blanc: #FAFAF8;
@@ -25,7 +25,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', 'DM Sans', sans-serif;
     background: var(--blanc);
     color: var(--noir);
     overflow-x: hidden;
@@ -36,19 +36,20 @@
     position: fixed; top: 0; left: 0; right: 0;
     background: rgba(250,250,248,0.95);
     backdrop-filter: blur(12px);
-    border-bottom: 2px solid var(--cyan-pale);
+    border-bottom: 1px solid rgba(31,167,166,0.2);
     z-index: 1000;
     padding: 0 5%;
     display: flex; align-items: center; justify-content: space-between;
-    height: 90px;
+    height: 80px;
   }
   .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
     color: var(--cyan);
-    font-weight: 700;
+    font-weight: 600;
     display: flex; align-items: center; gap: 10px;
     text-decoration: none;
+    letter-spacing: -0.02em;
   }
   .nav-logo img { 
     height: 130px; 
@@ -60,106 +61,93 @@
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
     text-decoration: none; color: var(--noir);
-    font-size: 0.9rem; font-weight: 500;
+    font-size: 0.85rem; font-weight: 500;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--cyan); }
   .nav-cta {
     background: var(--cyan); color: white;
-    padding: 10px 22px; border-radius: 100px;
-    font-size: 0.85rem; font-weight: 600;
+    padding: 8px 20px; border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500;
     text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s;
   }
-  .nav-cta:hover { background: var(--cyan-clair); transform: translateY(-1px); }
+  .nav-cta:hover { background: var(--cyan-clair); }
 
   /* ===== HERO ===== */
   #accueil {
     min-height: 100vh;
     display: grid; grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 120px 5% 60px;
+    padding: 100px 5% 60px;
     gap: 4rem;
     background: linear-gradient(135deg, var(--blanc) 60%, var(--cyan-pale) 100%);
     position: relative;
-    overflow: hidden;
-  }
-  #accueil::before {
-    content: '';
-    position: absolute; top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(31,167,166,0.12) 0%, transparent 70%);
-    border-radius: 50%;
   }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--orange-pale);
-    border: 1.5px solid var(--orange);
+    border: 1px solid var(--orange);
     color: var(--noir);
-    padding: 6px 16px; border-radius: 100px;
-    font-size: 0.8rem; font-weight: 600;
-    margin-bottom: 1.5rem;
-    animation: fadeSlideIn 0.6s ease both;
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 0.7rem; font-weight: 600;
+    margin-bottom: 1.2rem;
   }
   .hero-badge::before { content: '🌺'; }
   .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-    animation: fadeSlideIn 0.7s ease both;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
-  .hero-title em { color: var(--cyan); font-style: italic; }
+  .hero-title em { color: var(--cyan); font-style: italic; font-weight: 500; }
   .hero-title .highlight {
     background: var(--orange);
-    padding: 2px 10px;
+    padding: 2px 8px;
     border-radius: 4px;
     font-style: normal;
     color: white;
+    font-weight: 500;
   }
   .hero-text {
-    font-size: 1.05rem; color: var(--gris-fonce);
-    line-height: 1.75; margin-bottom: 2.5rem;
+    font-size: 0.95rem; color: var(--gris-fonce);
+    line-height: 1.6; margin-bottom: 2rem;
     max-width: 480px;
-    animation: fadeSlideIn 0.8s ease both;
   }
   .hero-btns {
     display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeSlideIn 0.9s ease both;
   }
   .btn-primary {
     background: var(--cyan); color: white;
-    padding: 14px 30px; border-radius: 100px;
-    font-size: 0.95rem; font-weight: 600;
+    padding: 12px 28px; border-radius: 100px;
+    font-size: 0.85rem; font-weight: 500;
     text-decoration: none; border: none; cursor: pointer;
     transition: all 0.25s;
-    box-shadow: 0 4px 16px rgba(31,167,166,0.3);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
-  .btn-primary:hover { background: var(--cyan-clair); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--cyan-clair); }
   .btn-secondary {
     background: transparent;
-    border: 2px solid var(--noir);
+    border: 1.5px solid var(--noir);
     color: var(--noir);
-    padding: 12px 28px; border-radius: 100px;
-    font-size: 0.95rem; font-weight: 600;
+    padding: 10px 26px; border-radius: 100px;
+    font-size: 0.85rem; font-weight: 500;
     text-decoration: none; cursor: pointer;
     transition: all 0.25s;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   .btn-secondary:hover { background: var(--noir); color: white; }
 
-  .hero-visual {
-    position: relative;
-    animation: fadeIn 1s ease both 0.3s;
-  }
+  .hero-visual { position: relative; }
   .hero-card-main {
     background: var(--cyan);
     border-radius: 24px;
     color: white;
     position: relative;
     overflow: hidden;
-    min-height: 500px;
+    min-height: 460px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -167,440 +155,380 @@
   .hero-photo {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
-    object-fit: cover; object-position: top center;
+    object-fit: cover;
     opacity: 0.5;
-    border-radius: 24px;
   }
   .hero-card-overlay {
     position: relative; z-index: 2;
-    background: linear-gradient(to top, rgba(31,107,106,0.9) 0%, rgba(31,167,166,0.6) 70%);
+    background: linear-gradient(to top, rgba(31,107,106,0.9) 0%, rgba(31,167,166,0.5) 70%);
     border-radius: 0 0 24px 24px;
-    padding: 2.5rem;
-    margin-top: auto;
+    padding: 2rem;
   }
   .hero-card-main h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem; margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem; margin-bottom: 0.3rem;
+    font-weight: 600;
   }
   .hero-card-main p { 
-    font-size: 1.1rem; 
-    line-height: 1.6; 
-    opacity: 0.95;
-    max-width: 90%;
+    font-size: 0.9rem; 
+    line-height: 1.5; 
+    opacity: 0.9;
   }
   .stats-row {
-    display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;
+    display: flex; gap: 0.8rem; margin-top: 1.2rem;
   }
   .stat-pill {
     background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 8px 16px; border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 12px; border-radius: 100px;
     text-align: center;
-    backdrop-filter: blur(4px);
   }
-  .stat-pill strong { display: block; font-size: 1.1rem; }
-  .stat-pill span { font-size: 0.72rem; opacity: 0.9; }
+  .stat-pill strong { display: block; font-size: 0.9rem; }
+  .stat-pill span { font-size: 0.6rem; opacity: 0.9; }
 
-  /* ===== SECTION COMMONS ===== */
+  /* ===== SECTION COMMUNS ===== */
   .section-label {
-    font-size: 0.8rem; font-weight: 700;
-    letter-spacing: 0.15em; text-transform: uppercase;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--cyan);
-    margin-bottom: 0.75rem;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .section-label::after {
-    content: ''; flex: 1; max-width: 40px;
-    height: 2px; background: var(--cyan);
+    margin-bottom: 0.6rem;
   }
   .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
   .section-sub {
-    color: var(--gris-fonce); font-size: 1rem;
-    line-height: 1.7; max-width: 560px;
-    margin-bottom: 3.5rem;
+    color: var(--gris-fonce); font-size: 0.9rem;
+    line-height: 1.6; max-width: 560px;
+    margin-bottom: 2.5rem;
   }
 
   /* ===== SERVICES ===== */
   #services {
-    padding: 100px 5%;
+    padding: 80px 5%;
     background: var(--blanc);
   }
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
   }
   .service-card {
     background: var(--blanc);
-    border: 2px solid var(--gris);
+    border: 1px solid #E8E8E4;
     border-radius: 20px;
-    padding: 2rem;
+    padding: 1.8rem;
     transition: all 0.3s;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
   }
-  .service-card::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0;
-    width: 100%; height: 3px;
-    background: var(--cyan-clair);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s;
+  .service-card:hover { border-color: var(--cyan-pale); transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.04); }
+  .service-icon-img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    margin-bottom: 1.2rem;
+    display: block;
   }
-  .service-card:hover { border-color: var(--cyan-pale); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(31,167,166,0.12); }
-  .service-card:hover::after { transform: scaleX(1); }
-  .service-icon {
-    width: 56px; height: 56px;
+  .service-icon-placeholder {
+    width: 56px;
+    height: 56px;
     background: var(--cyan-pale);
     border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.6rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.2rem;
   }
-  .service-card.accent .service-icon { background: var(--orange-pale); }
   .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; margin-bottom: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem; margin-bottom: 0.5rem;
+    font-weight: 600;
   }
-  .service-card p { font-size: 0.9rem; color: var(--gris-fonce); line-height: 1.65; }
+  .service-card p { font-size: 0.85rem; color: var(--gris-fonce); line-height: 1.5; margin-bottom: 0.8rem; }
   .service-tag {
     display: inline-block;
     background: var(--cyan-pale); color: var(--cyan);
-    font-size: 0.72rem; font-weight: 600;
+    font-size: 0.65rem; font-weight: 500;
     padding: 3px 10px; border-radius: 100px;
-    margin-top: 1rem;
   }
-  .service-card.accent .service-tag { background: var(--orange-pale); color: var(--orange); }
 
-  /* ===== PROJET / MARTINE ===== */
+  /* ===== PROJET ===== */
   #projet {
-    padding: 100px 5%;
-    background: var(--gris);
+    padding: 80px 5%;
+    background: #F5F5F2;
   }
   .projet-layout {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
     align-items: center;
   }
   .martine-frame {
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
     aspect-ratio: 4/5;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(31,167,166,0.15);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.06);
   }
   .martine-frame img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: top center;
-    display: block;
+    object-fit: cover;
   }
-  .martine-frame-placeholder {
-    background: linear-gradient(135deg, var(--cyan-pale), var(--vert-pale));
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 14px;
-  }
-  .martine-frame-placeholder .ph-icon { font-size: 4rem; }
-  .martine-frame-placeholder p { color: var(--cyan); font-weight: 600; font-size: 0.88rem; text-align: center; }
   .martine-quote {
     background: var(--cyan);
-    color: white; border-radius: 16px;
-    padding: 1.5rem 1.8rem;
-    font-style: italic; font-size: 1rem; line-height: 1.7;
-    position: relative; margin: 1.8rem 0;
+    color: white; border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    font-size: 0.9rem; line-height: 1.6;
+    position: relative; margin: 1.5rem 0;
   }
-  .martine-quote::before {
-    content: '❝';
-    position: absolute; top: 10px; left: 16px;
-    font-size: 2.5rem; opacity: 0.25;
-    font-family: 'Playfair Display', serif; line-height: 1;
-  }
-  .valeurs { display: flex; flex-direction: column; gap: 12px; }
+  .valeurs { display: flex; flex-direction: column; gap: 10px; }
   .valeur-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 12px 16px;
-    background: white; border-radius: 12px;
+    padding: 10px 14px;
+    background: white; border-radius: 10px;
     border-left: 3px solid var(--cyan);
   }
-  .valeur-item strong { color: var(--cyan); }
-  .valeur-item p { font-size: 0.9rem; color: var(--gris-fonce); margin-top: 2px; }
+  .valeur-item strong { color: var(--cyan); font-size: 0.85rem; }
+  .valeur-item p { font-size: 0.8rem; color: var(--gris-fonce); margin-top: 2px; }
 
-  /* ===== AGENDA ===== */
-  #animations {
-    padding: 100px 5%;
-    background: var(--blanc);
-  }
-  .agenda-layout {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    align-items: start;
-  }
-  .agenda-list { display: flex; flex-direction: column; gap: 1rem; }
-  .agenda-item {
-    background: white;
-    border: 2px solid var(--gris);
-    border-radius: 16px;
-    padding: 1.25rem 1.5rem;
-    display: flex; gap: 1.2rem; align-items: center;
-    transition: all 0.25s;
-    cursor: pointer;
-  }
-  .agenda-item:hover { border-color: var(--cyan-clair); transform: translateX(4px); }
-  .agenda-item.active { border-color: var(--cyan); background: var(--cyan-pale); }
-  .agenda-date {
+  /* ===== TEMOIGNAGES ===== */
+  #temoignages {
+    padding: 80px 5%;
     background: var(--cyan);
     color: white;
-    border-radius: 12px;
-    padding: 8px 14px;
-    text-align: center;
-    min-width: 54px; flex-shrink: 0;
   }
-  .agenda-date .day { font-size: 1.3rem; font-weight: 700; line-height: 1; }
-  .agenda-date .mois { font-size: 0.65rem; text-transform: uppercase; opacity: 0.85; }
-  .agenda-info h4 { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
-  .agenda-info p { font-size: 0.82rem; color: var(--gris-fonce); }
-  .agenda-time {
-    margin-left: auto;
-    background: var(--orange-pale);
-    color: var(--orange);
-    font-size: 0.78rem; font-weight: 600;
-    padding: 4px 10px; border-radius: 100px;
-    white-space: nowrap;
+  #temoignages .section-label { color: rgba(255,255,255,0.7); }
+  #temoignages .section-title { color: white; }
+  .temoignages-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; margin-top: 2rem;
+  }
+  .temoignage-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 18px; padding: 1.5rem;
+  }
+  .stars { color: var(--jaune); margin-bottom: 0.8rem; font-size: 0.85rem; }
+  .temoignage-card p { font-size: 0.85rem; line-height: 1.6; opacity: 0.9; margin-bottom: 1rem; }
+  .temoignage-author { display: flex; align-items: center; gap: 0.6rem; }
+  .author-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .author-name strong { font-size: 0.8rem; display: block; }
+  .author-name span { font-size: 0.7rem; opacity: 0.7; }
+
+  /* ===== INFOS PRATIQUES ===== */
+  #infos {
+    padding: 80px 5%;
+    background: #F5F5F2;
+  }
+  .infos-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .info-card {
+    background: white; border-radius: 20px; padding: 1.8rem;
+    border: 1px solid #E8E8E4;
+  }
+  .info-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem; margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--cyan);
+  }
+  .tarif-row {
+    display: flex; justify-content: space-between;
+    padding: 10px 0; border-bottom: 1px solid #F0F0EC;
+  }
+  .tarif-label { font-size: 0.85rem; }
+  .tarif-price { font-weight: 600; color: var(--orange); font-size: 0.85rem; }
+  .aide-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 0; border-bottom: 1px solid #F0F0EC;
+    font-size: 0.8rem;
+  }
+  .aide-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--vert); }
+  .zone-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.8rem; }
+  .zone-chip {
+    padding: 4px 12px; background: var(--cyan-pale);
+    border-radius: 100px; font-size: 0.7rem; font-weight: 500;
+    color: var(--cyan);
+  }
+  .note-apa {
+    background: var(--jaune-pale); border-left: 3px solid var(--jaune);
+    border-radius: 0 8px 8px 0; padding: 10px 12px;
+    font-size: 0.75rem; margin-top: 1rem;
+  }
+
+  /* ===== SECTION CONTACT FINALE (UNIQUE - Parlons de votre situation) ===== */
+  #contact-final {
+    padding: 80px 5% 100px;
+    background: var(--blanc);
+  }
+  .contact-final-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-final-info h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .contact-final-info p {
+    color: var(--gris-fonce);
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    font-size: 0.9rem;
+  }
+  .contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--gris);
+    border-radius: 14px;
+    padding: 0.9rem 1.2rem;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .contact-card:hover {
+    background: var(--cyan-pale);
+    transform: translateX(4px);
+  }
+  .contact-card-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--cyan);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    color: white;
+  }
+  .contact-card-text strong {
+    font-size: 0.9rem;
+    display: block;
+    font-weight: 600;
+  }
+  .contact-card-text span {
+    font-size: 0.75rem;
+    color: var(--gris-fonce);
   }
   .inscription-box {
     background: white;
     border-radius: 24px;
-    padding: 2.5rem;
-    border: 2px solid var(--cyan-pale);
+    padding: 2rem;
+    border: 1px solid var(--cyan-pale);
+    box-shadow: 0 8px 24px rgba(31,167,166,0.06);
   }
   .inscription-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem; margin-bottom: 0.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--cyan);
   }
-  .inscription-box p { color: var(--gris-fonce); font-size: 0.88rem; margin-bottom: 1.5rem; }
+  .inscription-box p {
+    color: var(--gris-fonce);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
   .form-group { margin-bottom: 1rem; }
-  .form-group label { font-size: 0.82rem; font-weight: 600; display: block; margin-bottom: 0.4rem; color: var(--noir); }
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--noir);
+  }
   .form-group input, .form-group select, .form-group textarea {
     width: 100%;
-    padding: 11px 14px;
-    border: 1.5px solid #E0E0DC;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-family: 'DM Sans', sans-serif;
+    padding: 10px 14px;
+    border: 1px solid #E0E0DC;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
     background: var(--blanc);
     transition: border-color 0.2s;
     outline: none;
     color: var(--noir);
   }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--cyan); }
-  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-group textarea { resize: vertical; min-height: 80px; }
   .form-submit {
     width: 100%;
     background: var(--cyan); color: white;
     border: none; border-radius: 100px;
-    padding: 14px; font-size: 0.95rem; font-weight: 600;
-    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    padding: 12px;
+    font-size: 0.85rem; font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
     margin-top: 0.5rem;
-    transition: all 0.25s;
+    transition: background 0.2s;
   }
-  .form-submit:hover { background: var(--cyan-clair); transform: translateY(-1px); }
-
-  /* ===== TEMOIGNAGES ===== */
-  #temoignages {
-    padding: 100px 5%;
-    background: var(--cyan);
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
-  #temoignages::before {
-    content: '❝';
-    position: absolute; right: 5%; top: 40px;
-    font-size: 12rem; opacity: 0.07;
-    font-family: 'Playfair Display', serif;
-    line-height: 1;
-  }
-  #temoignages .section-label { color: rgba(255,255,255,0.7); }
-  #temoignages .section-label::after { background: rgba(255,255,255,0.5); }
-  #temoignages .section-title { color: white; }
-  .temoignages-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; margin-top: 3rem;
-  }
-  .temoignage-card {
-    background: rgba(255,255,255,0.10);
-    border: 1.5px solid rgba(255,255,255,0.18);
-    border-radius: 20px; padding: 1.8rem;
-    transition: all 0.3s;
-  }
-  .temoignage-card:hover { background: rgba(255,255,255,0.16); transform: translateY(-3px); }
-  .stars { color: var(--jaune); margin-bottom: 1rem; font-size: 1rem; }
-  .temoignage-card p { font-size: 0.92rem; line-height: 1.7; opacity: 0.9; margin-bottom: 1.2rem; }
-  .temoignage-author { display: flex; align-items: center; gap: 0.8rem; }
-  .author-avatar {
-    width: 42px; height: 42px; border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
-  }
-  .author-name strong { font-size: 0.88rem; display: block; }
-  .author-name span { font-size: 0.78rem; opacity: 0.65; }
-
-  /* ===== CONTACT ===== */
-  #contact {
-    padding: 100px 5%;
-    background: var(--blanc);
-  }
-  .contact-layout {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    align-items: center;
-  }
-  .contact-info h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    line-height: 1.2; margin-bottom: 1rem;
-  }
-  .contact-info p { color: var(--gris-fonce); line-height: 1.75; margin-bottom: 2rem; }
-  .contact-cards { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-card {
-    display: flex; align-items: center; gap: 1rem;
-    background: var(--gris);
-    border-radius: 14px; padding: 1.1rem 1.4rem;
-    transition: all 0.2s; cursor: pointer;
-    text-decoration: none; color: inherit;
-  }
-  .contact-card:hover { background: var(--cyan-pale); }
-  .contact-card-icon {
-    width: 44px; height: 44px;
-    background: var(--cyan);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem; flex-shrink: 0;
-  }
-  .contact-card-text strong { font-size: 0.85rem; display: block; }
-  .contact-card-text span { font-size: 0.82rem; color: var(--gris-fonce); }
-  .contact-form {
-    background: var(--noir);
-    border-radius: 24px;
-    padding: 2.5rem;
-    color: white;
-  }
-  .contact-form h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem; margin-bottom: 0.4rem;
-  }
-  .contact-form p { opacity: 0.6; font-size: 0.88rem; margin-bottom: 1.5rem; }
-  .contact-form .form-group label { color: rgba(255,255,255,0.8); }
-  .contact-form .form-group input,
-  .contact-form .form-group select,
-  .contact-form .form-group textarea {
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.15);
-    color: white;
-  }
-  .contact-form .form-group input:focus,
-  .contact-form .form-group textarea:focus { border-color: var(--cyan-clair); }
-  .contact-form .form-submit { background: var(--orange); color: white; }
-  .contact-form .form-submit:hover { background: #e05a20; }
-
-  /* ===== INFOS PRATIQUES ===== */
-  #infos {
-    padding: 100px 5%;
-    background: var(--gris);
-  }
-  .infos-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-    align-items: start;
-  }
-  .info-card {
-    background: white; border-radius: 20px; padding: 2rem;
-    border: 2px solid var(--gris);
-  }
-  .info-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem; margin-bottom: 1.2rem;
-    color: var(--cyan);
-  }
-  .tarif-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 12px 0; border-bottom: 1px solid var(--gris);
-    gap: 16px;
-  }
-  .tarif-row:last-of-type { border-bottom: none; }
-  .tarif-label { font-size: 0.9rem; font-weight: 500; flex: 1; }
-  .tarif-price { font-weight: 700; color: var(--orange); font-size: 1rem; white-space: nowrap; }
-  .aide-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 10px 0; border-bottom: 1px solid var(--gris);
-    font-size: 0.88rem;
-  }
-  .aide-item:last-child { border-bottom: none; }
-  .aide-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--vert); flex-shrink: 0; }
-  .zone-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
-  .zone-chip {
-    padding: 6px 14px; background: var(--cyan-pale);
-    border-radius: 100px; font-size: 0.8rem; font-weight: 600;
-    color: var(--cyan);
-  }
-  .note-apa {
-    background: var(--jaune-pale); border-left: 3px solid var(--jaune);
-    border-radius: 0 10px 10px 0; padding: 12px 16px;
-    font-size: 0.85rem; margin-top: 1.2rem; line-height: 1.6;
-  }
+  .form-submit:hover { background: var(--cyan-clair); }
 
   /* ===== FOOTER ===== */
   footer {
     background: var(--noir);
-    color: rgba(255,255,255,0.7);
-    padding: 60px 5% 30px;
+    color: rgba(255,255,255,0.6);
+    padding: 50px 5% 25px;
   }
   .footer-grid {
     display: grid; grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem; margin-bottom: 3rem;
+    gap: 2rem; margin-bottom: 2rem;
   }
   .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem; color: white;
-    display: flex; align-items: center; gap: 10px;
-    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; color: white;
+    font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 0.8rem;
   }
-  .footer-logo img { height: 60px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
-  .footer-logo span { color: var(--orange); }
-  .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
-  .footer-tagline { color: var(--cyan-clair); font-style: italic; font-size: 0.88rem; margin-bottom: 0.8rem; }
+  .footer-logo img { height: 50px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+  .footer-brand p { font-size: 0.75rem; line-height: 1.6; max-width: 260px; }
+  .footer-tagline { color: var(--cyan-clair); font-size: 0.75rem; margin-bottom: 0.6rem; }
   .footer-col h4 {
-    font-weight: 700; color: white; font-size: 0.85rem;
+    font-weight: 600; color: white; font-size: 0.75rem;
     letter-spacing: 0.05em; text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
   .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 0.5rem; }
-  .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+  .footer-col ul li { margin-bottom: 0.4rem; }
+  .footer-col ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.75rem; transition: color 0.2s; }
   .footer-col ul li a:hover { color: var(--cyan-clair); }
   .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 1.5rem;
-    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 1.2rem;
+    display: flex; justify-content: space-between;
     flex-wrap: wrap; gap: 1rem;
+    font-size: 0.7rem;
   }
-  .footer-bottom p { font-size: 0.82rem; }
   .footer-badge {
     background: var(--cyan);
-    color: white; font-size: 0.78rem;
-    padding: 5px 14px; border-radius: 100px;
+    color: white; font-size: 0.65rem;
+    padding: 4px 12px; border-radius: 100px;
   }
 
   /* ===== MODALS ===== */
   .modal-overlay {
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(4px);
     z-index: 2000;
     display: none; align-items: center; justify-content: center;
     padding: 1rem;
@@ -609,96 +537,65 @@
   .modal {
     background: white;
     border-radius: 24px;
-    padding: 2.5rem;
+    padding: 2rem;
     width: 100%; max-width: 480px;
     position: relative;
-    animation: modalIn 0.3s ease;
   }
   .modal-close {
     position: absolute; top: 1rem; right: 1rem;
     background: var(--gris); border: none;
-    width: 36px; height: 36px; border-radius: 50%;
-    cursor: pointer; font-size: 1rem;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s;
+    width: 32px; height: 32px; border-radius: 50%;
+    cursor: pointer;
   }
-  .modal-close:hover { background: var(--cyan-pale); }
   .modal h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; margin-bottom: 0.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem; margin-bottom: 0.3rem;
+    font-weight: 600;
   }
-  .modal p.modal-sub { color: var(--gris-fonce); font-size: 0.88rem; margin-bottom: 1.5rem; }
   .modal .form-submit { background: var(--cyan); }
 
   /* ===== TOAST ===== */
   #toast {
     position: fixed; bottom: 2rem; right: 2rem;
     background: var(--cyan); color: white;
-    padding: 12px 22px; border-radius: 100px;
-    font-size: 0.88rem; font-weight: 600;
-    box-shadow: 0 8px 24px rgba(31,167,166,0.4);
+    padding: 10px 20px; border-radius: 100px;
+    font-size: 0.8rem;
     z-index: 3000;
     transform: translateY(100px); opacity: 0;
-    transition: all 0.4s;
+    transition: all 0.3s;
   }
   #toast.show { transform: translateY(0); opacity: 1; }
 
-  /* ===== WHATSAPP FLOATING ===== */
   .wa-float {
     position: fixed; bottom: 2rem; left: 2rem;
     background: #25D366; color: white;
-    width: 52px; height: 52px; border-radius: 50%;
+    width: 48px; height: 48px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; text-decoration: none;
-    box-shadow: 0 4px 18px rgba(37,211,102,0.35);
-    z-index: 999; transition: 0.25s;
-    animation: float 3s ease-in-out infinite;
+    font-size: 1.3rem; text-decoration: none;
+    z-index: 999;
   }
-  .wa-float:hover { transform: scale(1.12); box-shadow: 0 8px 24px rgba(37,211,102,0.5); }
 
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeSlideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-  @keyframes modalIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
   .fade-in-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
-    nav { padding: 0 4%; height: 80px; }
-    .nav-logo img { height: 50px; }
+    nav { padding: 0 4%; height: 70px; }
+    .nav-logo img { height: 100px; }
     .nav-links { display: none; }
-    #accueil { grid-template-columns: 1fr; padding: 100px 4% 60px; gap: 2.5rem; }
-    .hero-card-main { min-height: 400px; }
-    .hero-card-overlay { padding: 1.8rem; }
-    .stats-row { flex-wrap: wrap; }
-    .projet-layout, .agenda-layout, .contact-layout, .infos-grid, .footer-grid {
+    #accueil { grid-template-columns: 1fr; padding: 100px 4% 60px; gap: 2rem; }
+    .hero-card-main { min-height: 380px; }
+    .projet-layout, .contact-final-layout, .infos-grid, .footer-grid {
       grid-template-columns: 1fr; gap: 2rem;
     }
-    .martine-frame { max-width: 340px; margin: 0 auto; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV avec logo 5x plus grand -->
 <nav>
   <a href="#accueil" class="nav-logo">
     <img src="logo.png" alt="Ti Moman Art" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
@@ -708,25 +605,18 @@
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#projet">Le projet</a></li>
     <li><a href="#services">Activités</a></li>
-    <li><a href="#animations">Agenda</a></li>
     <li><a href="#temoignages">Témoignages</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#infos">Infos</a></li>
+    <li><a href="#contact-final">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Nous contacter</a>
+  <a href="#contact-final" class="nav-cta">Parlons de votre situation</a>
 </nav>
 
-<!-- HERO avec photo.png en fond dans cadre bleu -->
 <section id="accueil">
   <div class="hero-content">
     <div class="hero-badge">Accompagnement créatif · Guadeloupe</div>
-    <h1 class="hero-title">
-      La <em>création</em><br>
-      au cœur<br>
-      de la <span class="highlight">vie</span>
-    </h1>
-    <p class="hero-text">
-      Martine accompagne les personnes âgées en Guadeloupe avec bienveillance — ateliers créatifs, stimulation cognitive, gym douce et compagnie chaleureuse pour rompre l'isolement des aînés.
-    </p>
+    <h1 class="hero-title">La <em>création</em><br>au cœur<br>de la <span class="highlight">vie</span></h1>
+    <p class="hero-text">Martine accompagne les personnes âgées en Guadeloupe avec bienveillance — ateliers créatifs, stimulation cognitive, gym douce et compagnie chaleureuse pour rompre l'isolement des aînés.</p>
     <div class="hero-btns">
       <a href="#services" class="btn-primary">Découvrir les activités</a>
       <button onclick="openModal('modal-rdv')" class="btn-secondary">Prendre RDV</button>
@@ -748,535 +638,120 @@
   </div>
 </section>
 
-<!-- PROJET -->
 <section id="projet">
-  <div class="section-label">Qui est Martine - votre accompagnatrice ?</div>
+  <div class="section-label">Qui est Martine</div>
   <div class="projet-layout">
-    <div class="martine-frame fade-in-up">
-      <img src="photo.png" alt="Martine — Ti Moman Art"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="martine-frame-placeholder">
-        <div class="ph-icon">👩🏾</div>
-        <p>Photo de Martine<br><small>photo.png</small></p>
-      </div>
+    <div class="martine-frame">
+      <img src="photo.png" alt="Martine" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="martine-frame-placeholder" style="display:none; background:#E0F5F5; height:100%; align-items:center; justify-content:center;"><span>📷</span></div>
     </div>
-    <div class="fade-in-up">
+    <div>
       <h2 class="section-title">Une vocation<br>née du cœur</h2>
-      <p style="color:var(--gris-fonce);line-height:1.75;margin-bottom:1rem;">
-        Je m'appelle Martine. Depuis toujours, je crois au pouvoir de la créativité pour illuminer les journées et redonner de la joie à ceux qui se sentent seuls.
-      </p>
-      <p style="color:var(--gris-fonce);line-height:1.75;">
-        Formée aux techniques d'accompagnement des personnes âgées et aux ateliers de bien-être, j'ai créé <strong>Ti Moman Art</strong> pour offrir des moments précieux aux aînés de Guadeloupe — et à leurs familles une vraie sérénité.
-      </p>
-      <div class="martine-quote">
-        Je ne viens pas faire une prestation. Je viens partager un moment. Chaque sourire que je vois me confirme que je suis au bon endroit.
-      </div>
+      <p style="color:var(--gris-fonce);line-height:1.6;margin-bottom:1rem;font-size:0.9rem;">Je m'appelle Martine. Depuis toujours, je crois au pouvoir de la créativité pour illuminer les journées et redonner de la joie à ceux qui se sentent seuls.</p>
+      <p style="color:var(--gris-fonce);line-height:1.6;font-size:0.9rem;">Formée aux techniques d'accompagnement des personnes âgées, j'ai créé <strong>Ti Moman Art</strong> pour offrir des moments précieux aux aînés de Guadeloupe.</p>
+      <div class="martine-quote">Je ne viens pas faire une prestation. Je viens partager un moment. Chaque sourire que je vois me confirme que je suis au bon endroit.</div>
       <div class="valeurs">
-        <div class="valeur-item">
-          <div><strong>Bienveillance</strong><p>Chaque personne est accueillie avec respect et chaleur</p></div>
-        </div>
-        <div class="valeur-item">
-          <div><strong>Créativité</strong><p>L'art comme langage universel et source de bien-être</p></div>
-        </div>
-        <div class="valeur-item">
-          <div><strong>Lien &amp; Partage</strong><p>Rompre l'isolement, redonner goût aux petits bonheurs</p></div>
-        </div>
+        <div class="valeur-item"><div><strong>Bienveillance</strong><p>Chaque personne est accueillie avec respect et chaleur</p></div></div>
+        <div class="valeur-item"><div><strong>Créativité</strong><p>L'art comme langage universel et source de bien-être</p></div></div>
+        <div class="valeur-item"><div><strong>Lien & Partage</strong><p>Rompre l'isolement, redonner goût aux petits bonheurs</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES / ACTIVITES -->
 <section id="services">
   <div class="section-label">Ce que nous proposons</div>
   <h2 class="section-title">Les activités</h2>
-  <p class="section-sub">Des ateliers pensés pour apporter joie, stimulation et lien social — adaptés au rythme et aux envies de chaque personne.</p>
-
+  <p class="section-sub">Des ateliers pensés pour apporter joie, stimulation et lien social.</p>
   <div class="services-grid">
-    <div class="service-card fade-in-up" onclick="openServiceDetail('creatifs')">
-      <div class="service-icon">🎨</div>
-      <h3>Ateliers créatifs</h3>
-      <p>Peinture, dessin, collage, mosaïque… Des activités manuelles douces pour s'exprimer librement. Chaque œuvre est une fierté.</p>
-      <span class="service-tag">Art &amp; Expression</span>
-    </div>
-    <div class="service-card fade-in-up accent" onclick="openServiceDetail('cognitif')">
-      <div class="service-icon">🧠</div>
-      <h3>Stimulation cognitive</h3>
-      <p>Jeux de mémoire, quiz, évocations du passé, lecture partagée… Pour garder l'esprit vif dans la bonne humeur.</p>
-      <span class="service-tag">Populaire</span>
-    </div>
-    <div class="service-card fade-in-up" onclick="openServiceDetail('gym')">
-      <div class="service-icon">🌿</div>
-      <h3>Gym douce &amp; bien-être</h3>
-      <p>Exercices adaptés, relaxation, respiration et mouvement en douceur pour entretenir la mobilité et apaiser le corps.</p>
-      <span class="service-tag">Bien-être</span>
-    </div>
-    <div class="service-card fade-in-up accent" onclick="openServiceDetail('sorties')">
-      <div class="service-icon">🌺</div>
-      <h3>Sorties adaptées</h3>
-      <p>Balades en nature, marchés locaux, visites… Pour briser la routine, respirer l'air de la Guadeloupe et créer des souvenirs.</p>
-      <span class="service-tag">Découverte</span>
-    </div>
-    <div class="service-card fade-in-up" onclick="openServiceDetail('compagnie')">
-      <div class="service-icon">☀️</div>
-      <h3>Lien social &amp; compagnie</h3>
-      <p>Simplement être là — discuter, écouter, rire, partager. La présence bienveillante de Martine est en elle-même une source de bien-être.</p>
-      <span class="service-tag">Lien humain</span>
-    </div>
-    <div class="service-card fade-in-up accent" onclick="openServiceDetail('numerique')">
-      <div class="service-icon">📱</div>
-      <h3>Initiation numérique</h3>
-      <p>Appels vidéo avec la famille, tablette, navigation sur internet en toute sécurité. Rester connecté à ceux qu'on aime.</p>
-      <span class="service-tag">Innovation</span>
-    </div>
+    <div class="service-card" onclick="openServiceDetail('creatifs')"><img src="illu1.png" class="service-icon-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="service-icon-placeholder" style="display:none">🎨</div><h3>Ateliers créatifs</h3><p>Peinture, dessin, collage, mosaïque…</p><span class="service-tag">Art & Expression</span></div>
+    <div class="service-card" onclick="openServiceDetail('cognitif')"><img src="illu2.png" class="service-icon-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="service-icon-placeholder" style="display:none">🧠</div><h3>Stimulation cognitive</h3><p>Jeux de mémoire, quiz, évocations…</p><span class="service-tag">Populaire</span></div>
+    <div class="service-card" onclick="openServiceDetail('gym')"><img src="illu3.png" class="service-icon-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="service-icon-placeholder" style="display:none">🌿</div><h3>Gym douce & bien-être</h3><p>Exercices adaptés, relaxation…</p><span class="service-tag">Bien-être</span></div>
+    <div class="service-card" onclick="openServiceDetail('sorties')"><img src="illu4.png" class="service-icon-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="service-icon-placeholder" style="display:none">🌺</div><h3>Sorties adaptées</h3><p>Balades, marchés, visites…</p><span class="service-tag">Découverte</span></div>
+    <div class="service-card" onclick="openServiceDetail('compagnie')"><img src="illu5.png" class="service-icon-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="service-icon-placeholder" style="display:none">☀️</div><h3>Lien social & compagnie</h3><p>Discuter, écouter, rire, partager.</p><span class="service-tag">Lien humain</span></div>
+    <div class="service-card" onclick="openServiceDetail('numerique')"><img src="illu6.png" class="service-icon-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="service-icon-placeholder" style="display:none">📱</div><h3>Initiation numérique</h3><p>Appels vidéo, tablette, internet sécurisé.</p><span class="service-tag">Innovation</span></div>
   </div>
 </section>
 
-<!-- AGENDA -->
-<section id="animations">
-  <div class="section-label">Programme des activités</div>
-  <h2 class="section-title">Agenda des animations</h2>
-  <p class="section-sub">Des activités variées pour stimuler le corps et l'esprit, dans la bonne humeur !</p>
-
-  <div class="agenda-layout">
-    <div class="agenda-list fade-in-up">
-      <div class="agenda-item active">
-        <div class="agenda-date"><div class="day">07</div><div class="mois">Avr</div></div>
-        <div class="agenda-info">
-          <h4>🎨 Atelier peinture aquarelle</h4>
-          <p>Initiation douce aux techniques de peinture tropicale</p>
-        </div>
-        <span class="agenda-time">10h00</span>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-date"><div class="day">09</div><div class="mois">Avr</div></div>
-        <div class="agenda-info">
-          <h4>🧠 Jeux de mémoire &amp; Quiz</h4>
-          <p>Stimulation cognitive en groupe, ambiance conviviale</p>
-        </div>
-        <span class="agenda-time">14h30</span>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-date"><div class="day">12</div><div class="mois">Avr</div></div>
-        <div class="agenda-info">
-          <h4>🌿 Gym douce &amp; Relaxation</h4>
-          <p>Exercices adaptés, respiration, bien-être corporel</p>
-        </div>
-        <span class="agenda-time">09h00</span>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-date"><div class="day">14</div><div class="mois">Avr</div></div>
-        <div class="agenda-info">
-          <h4>✂️ Créations manuelles &amp; Collage</h4>
-          <p>Artisanat créatif, travaux manuels joyeux</p>
-        </div>
-        <span class="agenda-time">15h00</span>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-date"><div class="day">17</div><div class="mois">Avr</div></div>
-        <div class="agenda-info">
-          <h4>🌺 Sortie balade nature</h4>
-          <p>Promenade adaptée, découverte de la Guadeloupe</p>
-        </div>
-        <span class="agenda-time">09h30</span>
-      </div>
-    </div>
-
-    <div class="inscription-box fade-in-up">
-      <h3>S'inscrire à une animation</h3>
-      <p>Réservez votre place pour une activité. Les places sont limitées !</p>
-      <div class="form-group">
-        <label>Nom et prénom</label>
-        <input type="text" id="insc-nom" placeholder="Marie Dupont" />
-      </div>
-      <div class="form-group">
-        <label>Téléphone</label>
-        <input type="tel" id="insc-tel" placeholder="0590 XX XX XX" />
-      </div>
-      <div class="form-group">
-        <label>Choisir une animation</label>
-        <select id="insc-activite">
-          <option>🎨 Atelier peinture aquarelle — 7 avr.</option>
-          <option>🧠 Jeux de mémoire — 9 avr.</option>
-          <option>🌿 Gym douce — 12 avr.</option>
-          <option>✂️ Créations manuelles — 14 avr.</option>
-          <option>🌺 Sortie balade — 17 avr.</option>
-        </select>
-      </div>
-      <button class="form-submit" onclick="inscrireAnimation()">Confirmer mon inscription ✓</button>
-    </div>
-  </div>
-</section>
-
-<!-- TEMOIGNAGES -->
 <section id="temoignages">
   <div class="section-label">Ils nous font confiance</div>
   <h2 class="section-title">Ce que disent les familles</h2>
-
   <div class="temoignages-grid">
-    <div class="temoignage-card fade-in-up">
-      <div class="stars">★★★★★</div>
-      <p>Martine est d'une gentillesse extraordinaire avec ma mère. Elle lui apporte joie et sérénité à chaque visite. Toute la famille est soulagée et reconnaissante.</p>
-      <div class="temoignage-author">
-        <div class="author-avatar">👨🏾</div>
-        <div class="author-name">
-          <strong>Jean-Claude M.</strong>
-          <span>Famille des Abymes</span>
-        </div>
-      </div>
-    </div>
-    <div class="temoignage-card fade-in-up">
-      <div class="stars">★★★★★</div>
-      <p>Mon père avait fermé les yeux sur le monde. Grâce aux ateliers créatifs de Martine, il a recommencé à peindre. Je lui fais confiance les yeux fermés.</p>
-      <div class="temoignage-author">
-        <div class="author-avatar">👩🏽</div>
-        <div class="author-name">
-          <strong>Sandra K.</strong>
-          <span>Famille de Pointe-à-Pitre</span>
-        </div>
-      </div>
-    </div>
-    <div class="temoignage-card fade-in-up">
-      <div class="stars">★★★★★</div>
-      <p>Un service professionnel et humain. Martine respecte l'intimité et les habitudes de grand-mère. Elle est devenue comme un membre de la famille.</p>
-      <div class="temoignage-author">
-        <div class="author-avatar">🧑🏾</div>
-        <div class="author-name">
-          <strong>Patrick L.</strong>
-          <span>Famille de Basse-Terre</span>
-        </div>
-      </div>
-    </div>
+    <div class="temoignage-card"><div class="stars">★★★★★</div><p>Martine est d'une gentillesse extraordinaire avec ma mère. Elle lui apporte joie et sérénité à chaque visite.</p><div class="temoignage-author"><div class="author-avatar">👨🏾</div><div class="author-name"><strong>Jean-Claude M.</strong><span>Famille des Abymes</span></div></div></div>
+    <div class="temoignage-card"><div class="stars">★★★★★</div><p>Mon père avait fermé les yeux sur le monde. Grâce aux ateliers créatifs de Martine, il a recommencé à peindre.</p><div class="temoignage-author"><div class="author-avatar">👩🏽</div><div class="author-name"><strong>Sandra K.</strong><span>Famille de Pointe-à-Pitre</span></div></div></div>
+    <div class="temoignage-card"><div class="stars">★★★★★</div><p>Un service professionnel et humain. Martine respecte l'intimité et les habitudes de grand-mère.</p><div class="temoignage-author"><div class="author-avatar">🧑🏾</div><div class="author-name"><strong>Patrick L.</strong><span>Famille de Basse-Terre</span></div></div></div>
   </div>
 </section>
 
-<!-- INFOS PRATIQUES -->
 <section id="infos">
   <div class="section-label">Informations pratiques</div>
   <h2 class="section-title">Tout ce qu'il faut savoir</h2>
-  <p class="section-sub">Tarifs, aides financières et zone d'intervention — simplement.</p>
-
   <div class="infos-grid">
-    <div class="info-card fade-in-up">
-      <h3>💰 Tarifs indicatifs</h3>
-      <div class="tarif-row"><span class="tarif-label">Séance de 1h à domicile</span><span class="tarif-price">À partir de 25 €</span></div>
-      <div class="tarif-row"><span class="tarif-label">Séance de 2h à domicile</span><span class="tarif-price">À partir de 45 €</span></div>
-      <div class="tarif-row"><span class="tarif-label">Forfait hebdomadaire</span><span class="tarif-price">Sur devis</span></div>
-      <div class="tarif-row"><span class="tarif-label">Sortie accompagnée</span><span class="tarif-price">Sur devis</span></div>
-      <div class="note-apa">
-        💡 <strong>Bon à savoir :</strong> Une partie des tarifs peut être prise en charge par l'APA ou d'autres aides. Contactez votre CCAS.
-      </div>
-    </div>
-    <div class="info-card fade-in-up">
-      <h3>🤝 Aides financières</h3>
-      <div class="aide-item"><div class="aide-dot"></div>APA — Allocation Personnalisée d'Autonomie</div>
-      <div class="aide-item"><div class="aide-dot"></div>PCH — Prestation de Compensation du Handicap</div>
-      <div class="aide-item"><div class="aide-dot"></div>Aides des CCAS locaux</div>
-      <div class="aide-item"><div class="aide-dot"></div>Crédit d'impôt services à la personne</div>
-      <br>
-      <h3>📍 Zone d'intervention</h3>
-      <div class="zone-list">
-        <span class="zone-chip">Pointe-à-Pitre</span>
-        <span class="zone-chip">Les Abymes</span>
-        <span class="zone-chip">Basse-Terre</span>
-        <span class="zone-chip">Le Gosier</span>
-        <span class="zone-chip">Sainte-Anne</span>
-        <span class="zone-chip">Saint-François</span>
-        <span class="zone-chip">Petit-Bourg</span>
-        <span class="zone-chip">Baie-Mahault</span>
-      </div>
-    </div>
+    <div class="info-card"><h3>💰 Tarifs indicatifs</h3><div class="tarif-row"><span>Séance 1h à domicile</span><span class="tarif-price">À partir de 25 €</span></div><div class="tarif-row"><span>Séance 2h à domicile</span><span class="tarif-price">À partir de 45 €</span></div><div class="tarif-row"><span>Forfait hebdomadaire</span><span class="tarif-price">Sur devis</span></div><div class="note-apa">💡 Une partie peut être prise en charge par l'APA.</div></div>
+    <div class="info-card"><h3>🤝 Aides & Zone</h3><div class="aide-item"><div class="aide-dot"></div>APA — Allocation Personnalisée d'Autonomie</div><div class="aide-item"><div class="aide-dot"></div>PCH — Prestation de Compensation</div><div class="aide-item"><div class="aide-dot"></div>Crédit d'impôt services à la personne</div><div class="zone-list"><span class="zone-chip">Pointe-à-Pitre</span><span class="zone-chip">Les Abymes</span><span class="zone-chip">Basse-Terre</span><span class="zone-chip">Le Gosier</span><span class="zone-chip">Sainte-Anne</span><span class="zone-chip">Saint-François</span></div></div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">Nous joindre</div>
-
-  <div class="contact-layout">
-    <div class="contact-info fade-in-up">
-      <h2 class="section-title">Parlons de votre situation</h2>
-      <p>Chaque besoin est unique. Contactez Martine pour un premier échange gratuit et sans engagement. Elle sera heureuse de vous répondre.</p>
-
+<!-- SECTION UNIQUE : Parlons de votre situation (formulaire + coordonnées) -->
+<section id="contact-final">
+  <div class="section-label">Prenez un moment avec Martine</div>
+  <div class="contact-final-layout">
+    <div class="contact-final-info">
+      <h2>Parlons de votre situation</h2>
+      <p>Un échange gratuit et sans engagement pour comprendre vos besoins, les envies de votre proche, et construire ensemble un accompagnement sur mesure.</p>
       <div class="contact-cards">
-        <a class="contact-card" href="tel:+590690000000">
-          <div class="contact-card-icon">📞</div>
-          <div class="contact-card-text">
-            <strong>Appelez directement</strong>
-            <span>0690 XX XX XX — Lun–Sam 8h–18h</span>
-          </div>
-        </a>
-        <a class="contact-card" href="https://wa.me/590690000000" target="_blank">
-          <div class="contact-card-icon">💬</div>
-          <div class="contact-card-text">
-            <strong>WhatsApp</strong>
-            <span>Message rapide, réponse sous 24h</span>
-          </div>
-        </a>
-        <a class="contact-card" href="mailto:contact@timomanart.fr">
-          <div class="contact-card-icon">📧</div>
-          <div class="contact-card-text">
-            <strong>Par email</strong>
-            <span>contact@timomanart.fr</span>
-          </div>
-        </a>
-        <div class="contact-card">
-          <div class="contact-card-icon">📍</div>
-          <div class="contact-card-text">
-            <strong>Zone d'intervention</strong>
-            <span>Pointe-à-Pitre, Abymes, Basse-Terre et alentours</span>
-          </div>
-        </div>
+        <a class="contact-card" href="tel:+590690000000"><div class="contact-card-icon">📞</div><div class="contact-card-text"><strong>Appelez directement</strong><span>0690 XX XX XX — Lun–Sam 8h–18h</span></div></a>
+        <a class="contact-card" href="https://wa.me/590690000000" target="_blank"><div class="contact-card-icon">💬</div><div class="contact-card-text"><strong>WhatsApp</strong><span>Message rapide, réponse sous 24h</span></div></a>
+        <a class="contact-card" href="mailto:contact@timomanart.fr"><div class="contact-card-icon">📧</div><div class="contact-card-text"><strong>Par email</strong><span>contact@timomanart.fr</span></div></a>
       </div>
     </div>
-
-    <div class="contact-form fade-in-up">
-      <h3>Envoyer un message</h3>
-      <p>Réponse garantie sous 24h</p>
-      <div class="form-group">
-        <label>Votre nom</label>
-        <input type="text" id="c-nom" placeholder="Prénom et nom" />
+    <div class="inscription-box">
+      <h3>Demandez un rendez-vous</h3>
+      <p>Martine vous recontactera rapidement pour fixer une rencontre à domicile ou par téléphone.</p>
+      <div class="form-group"><label>Votre nom et prénom</label><input type="text" id="rdv-nom" placeholder="Marie Dupont" /></div>
+      <div class="form-group"><label>Téléphone</label><input type="tel" id="rdv-tel" placeholder="0590 XX XX XX" /></div>
+      <div class="form-group"><label>Disponibilités / Message rapide</label><textarea rows="2" id="rdv-msg" placeholder="Indiquez vos disponibilités ou la situation de votre proche..."></textarea></div>
+      <button class="form-submit" onclick="demanderRdv()">Demander un entretien</button>
+      <div style="margin-top: 1.2rem; background: var(--gris); border-radius: 12px; padding: 0.8rem; text-align: center; font-size: 0.75rem;">
+        <strong>📞 0690 XX XX XX</strong><br>Ou via WhatsApp / téléphone
       </div>
-      <div class="form-group">
-        <label>Téléphone</label>
-        <input type="tel" id="c-tel" placeholder="0590 XX XX XX" />
-      </div>
-      <div class="form-group">
-        <label>Objet de votre demande</label>
-        <select id="c-objet">
-          <option>Renseignement sur les activités</option>
-          <option>Demande de tarif</option>
-          <option>Inscription à une animation</option>
-          <option>Partenariat / Institution</option>
-          <option>Autre</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Votre message</label>
-        <textarea id="c-message" placeholder="Décrivez votre situation ou votre demande…"></textarea>
-      </div>
-      <button class="form-submit" onclick="envoyerMessage()">Envoyer le message 🌿</button>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="logo.png" alt="Ti Moman Art" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-        <span style="display:none">Ti Moman <span>Art</span></span>
-      </div>
-      <div class="footer-tagline">La création au cœur de la vie</div>
-      <p>Des moments de partage, de créativité et de bienveillance pour rompre l'isolement de vos proches aînés. En Guadeloupe, à domicile, avec le cœur.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Activités</h4>
-      <ul>
-        <li><a href="#services">Ateliers créatifs</a></li>
-        <li><a href="#services">Stimulation cognitive</a></li>
-        <li><a href="#services">Gym douce</a></li>
-        <li><a href="#services">Sorties adaptées</a></li>
-        <li><a href="#services">Lien social</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Infos pratiques</h4>
-      <ul>
-        <li><a href="#infos">Tarifs &amp; Aides</a></li>
-        <li><a href="#infos">Zone d'intervention</a></li>
-        <li><a href="#contact">Prendre contact</a></li>
-        <li><a href="#projet">Le projet</a></li>
-        <li><a href="#animations">Agenda</a></li>
-      </ul>
-    </div>
+    <div class="footer-brand"><div class="footer-logo"><img src="logo.png" alt="Ti Moman Art"><span>Ti Moman Art</span></div><div class="footer-tagline">La création au cœur de la vie</div><p>Des moments de partage, de créativité et de bienveillance pour rompre l'isolement de vos proches aînés.</p></div>
+    <div class="footer-col"><h4>Activités</h4><ul><li><a href="#services">Ateliers créatifs</a></li><li><a href="#services">Stimulation cognitive</a></li><li><a href="#services">Gym douce</a></li><li><a href="#services">Sorties adaptées</a></li></ul></div>
+    <div class="footer-col"><h4>Infos</h4><ul><li><a href="#infos">Tarifs & Aides</a></li><li><a href="#infos">Zone d'intervention</a></li><li><a href="#contact-final">Nous contacter</a></li><li><a href="#projet">Le projet</a></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Ti Moman Art — Guadeloupe · Tous droits réservés</p>
-    <span class="footer-badge">🌺 Service à domicile Guadeloupe</span>
-  </div>
+  <div class="footer-bottom"><p>© 2026 Ti Moman Art — Guadeloupe</p><span class="footer-badge">Service à domicile Guadeloupe</span></div>
 </footer>
 
-<!-- MODAL RDV -->
-<div class="modal-overlay" id="modal-rdv" onclick="closeModalOutside(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('modal-rdv')">✕</button>
-    <h3>Prendre rendez-vous</h3>
-    <p class="modal-sub">Martine vous rappellera dans les plus brefs délais.</p>
-    <div class="form-group"><label>Nom et prénom</label><input type="text" placeholder="Marie Dupont" /></div>
-    <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="0590 XX XX XX" /></div>
-    <div class="form-group"><label>Date souhaitée</label><input type="date" /></div>
-    <div class="form-group">
-      <label>Type d'activité souhaité</label>
-      <select>
-        <option>Ateliers créatifs</option>
-        <option>Stimulation cognitive</option>
-        <option>Gym douce</option>
-        <option>Sortie adaptée</option>
-        <option>Compagnie &amp; Écoute</option>
-        <option>Autre</option>
-      </select>
-    </div>
-    <button class="form-submit" onclick="confirmerRDV()">Confirmer la demande ✓</button>
-  </div>
-</div>
-
-<!-- MODAL SERVICE DETAIL -->
-<div class="modal-overlay" id="modal-service" onclick="closeModalOutside(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('modal-service')">✕</button>
-    <h3 id="modal-service-title"></h3>
-    <p class="modal-sub" id="modal-service-sub"></p>
-    <div id="modal-service-content"></div>
-    <br>
-    <button class="form-submit" onclick="openModal('modal-rdv'); closeModal('modal-service')">Demander cette activité</button>
-  </div>
-</div>
-
-<!-- TOAST -->
-<div id="toast">✅ Envoyé avec succès !</div>
-
-<!-- FLOATING WA -->
-<a href="https://wa.me/590690000000" class="wa-float" target="_blank" title="WhatsApp">💬</a>
+<div class="modal-overlay" id="modal-rdv" onclick="closeModalOutside(event)"><div class="modal"><button class="modal-close" onclick="closeModal('modal-rdv')">✕</button><h3>Prendre rendez-vous</h3><p class="modal-sub" style="font-size:0.8rem; color:#6B6B68;">Martine vous rappellera sous 24h.</p><div class="form-group"><label>Nom et prénom</label><input type="text" id="modal-nom" /></div><div class="form-group"><label>Téléphone</label><input type="tel" id="modal-tel" /></div><div class="form-group"><label>Date souhaitée</label><input type="date" id="modal-date" /></div><button class="form-submit" onclick="confirmerRDVModal()">Confirmer</button></div></div>
+<div class="modal-overlay" id="modal-service" onclick="closeModalOutside(event)"><div class="modal"><button class="modal-close" onclick="closeModal('modal-service')">✕</button><h3 id="modal-service-title"></h3><p id="modal-service-sub" style="font-size:0.8rem; color:#6B6B68; margin-bottom:1rem;"></p><div id="modal-service-content"></div><button class="form-submit" style="margin-top:1rem;" onclick="openModal('modal-rdv'); closeModal('modal-service')">Demander cette activité</button></div></div>
+<div id="toast">✅ Demande envoyée</div>
+<a href="https://wa.me/590690000000" class="wa-float" target="_blank">💬</a>
 
 <script>
   const services = {
-    creatifs: {
-      title: '🎨 Ateliers créatifs',
-      sub: 'Peinture, dessin, collage — s\'exprimer librement',
-      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem">
-        <li>✅ Peinture aquarelle et acrylique</li>
-        <li>✅ Dessin guidé et libre</li>
-        <li>✅ Collage et mosaïque</li>
-        <li>✅ Créations décoratives</li>
-        <li>✅ Exposition des œuvres pour la famille</li>
-      </ul>`
-    },
-    cognitif: {
-      title: '🧠 Stimulation cognitive',
-      sub: 'Garder l\'esprit vif dans la bonne humeur',
-      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem">
-        <li>✅ Jeux de mémoire adaptés</li>
-        <li>✅ Quiz et devinettes</li>
-        <li>✅ Évocations du passé et reminiscence</li>
-        <li>✅ Lecture partagée</li>
-        <li>✅ Mots croisés et sudoku doux</li>
-      </ul>`
-    },
-    gym: {
-      title: '🌿 Gym douce &amp; bien-être',
-      sub: 'Le corps et l\'esprit apaisés',
-      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem">
-        <li>✅ Exercices de mobilité adaptés</li>
-        <li>✅ Respiration et relaxation</li>
-        <li>✅ Étirements doux</li>
-        <li>✅ Équilibre et coordination</li>
-        <li>✅ Méditation guidée</li>
-      </ul>`
-    },
-    sorties: {
-      title: '🌺 Sorties adaptées',
-      sub: 'Découvrir, respirer, créer des souvenirs',
-      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem">
-        <li>✅ Balades en nature et jardins</li>
-        <li>✅ Marchés locaux</li>
-        <li>✅ Visites culturelles adaptées</li>
-        <li>✅ Pique-nique et détente</li>
-        <li>✅ Transport organisé</li>
-      </ul>`
-    },
-    compagnie: {
-      title: '☀️ Lien social &amp; compagnie',
-      sub: 'La présence bienveillante avant tout',
-      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem">
-        <li>✅ Conversations enrichissantes</li>
-        <li>✅ Écoute et soutien moral</li>
-        <li>✅ Partage de souvenirs et d'histoires</li>
-        <li>✅ Aide aux appels vidéo famille</li>
-        <li>✅ Présence bienveillante au domicile</li>
-      </ul>`
-    },
-    numerique: {
-      title: '📱 Initiation numérique',
-      sub: 'Rester connecté avec ses proches',
-      content: `<ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;font-size:0.9rem">
-        <li>✅ Tablette et smartphone en douceur</li>
-        <li>✅ Appels vidéo WhatsApp / FaceTime</li>
-        <li>✅ Navigation internet sécurisée</li>
-        <li>✅ Photos et partage famille</li>
-        <li>✅ Musique et vidéos en ligne</li>
-      </ul>`
-    }
+    creatifs: { title: 'Ateliers créatifs', sub: 'Peinture, dessin, collage', content: '<ul><li>Peinture aquarelle</li><li>Dessin guidé</li><li>Collage et mosaïque</li></ul>' },
+    cognitif: { title: 'Stimulation cognitive', sub: 'Garder l\'esprit vif', content: '<ul><li>Jeux de mémoire</li><li>Quiz et devinettes</li><li>Lecture partagée</li></ul>' },
+    gym: { title: 'Gym douce', sub: 'Bien-être du corps', content: '<ul><li>Mobilité adaptée</li><li>Respiration</li><li>Équilibre</li></ul>' },
+    sorties: { title: 'Sorties adaptées', sub: 'Découvrir ensemble', content: '<ul><li>Balades nature</li><li>Marchés locaux</li><li>Visites culturelles</li></ul>' },
+    compagnie: { title: 'Lien social', sub: 'Présence bienveillante', content: '<ul><li>Conversations</li><li>Écoute et soutien</li><li>Aide appels vidéo</li></ul>' },
+    numerique: { title: 'Initiation numérique', sub: 'Rester connecté', content: '<ul><li>Tablette et smartphone</li><li>Appels vidéo</li><li>Navigation sécurisée</li></ul>' }
   };
-
-  function openModal(id) {
-    document.getElementById(id).classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function closeModalOutside(e) {
-    if (e.target.classList.contains('modal-overlay')) {
-      e.target.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  }
-  function openServiceDetail(key) {
-    const s = services[key];
-    document.getElementById('modal-service-title').innerHTML = s.title;
-    document.getElementById('modal-service-sub').textContent = s.sub;
-    document.getElementById('modal-service-content').innerHTML = s.content;
-    openModal('modal-service');
-  }
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3500);
-  }
-  function inscrireAnimation() {
-    const nom = document.getElementById('insc-nom').value.trim();
-    const tel = document.getElementById('insc-tel').value.trim();
-    const act = document.getElementById('insc-activite').value;
-    if (!nom || !tel) { showToast('⚠️ Veuillez remplir tous les champs'); return; }
-    showToast('🎉 Inscription confirmée — ' + act.split('—')[0].trim() + ' !');
-    document.getElementById('insc-nom').value = '';
-    document.getElementById('insc-tel').value = '';
-  }
-  function confirmerRDV() {
-    showToast('📅 Demande envoyée ! Martine vous rappellera.');
-    closeModal('modal-rdv');
-  }
-  function envoyerMessage() {
-    const nom = document.getElementById('c-nom').value.trim();
-    const msg = document.getElementById('c-message').value.trim();
-    if (!nom || !msg) { showToast('⚠️ Veuillez remplir votre nom et message'); return; }
-    showToast('✅ Message envoyé ! Réponse sous 24h.');
-    document.getElementById('c-nom').value = '';
-    document.getElementById('c-tel').value = '';
-    document.getElementById('c-message').value = '';
-  }
-
-  // Agenda item click
-  document.querySelectorAll('.agenda-item').forEach(item => {
-    item.addEventListener('click', function() {
-      document.querySelectorAll('.agenda-item').forEach(i => i.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-
-  // Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      }
-    });
-  }, { threshold: 0.1 });
+  function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+  function closeModalOutside(e) { if (e.target.classList.contains('modal-overlay')) closeModal(e.target.id); }
+  function openServiceDetail(key) { const s = services[key]; document.getElementById('modal-service-title').innerHTML = s.title; document.getElementById('modal-service-sub').innerHTML = s.sub; document.getElementById('modal-service-content').innerHTML = s.content; openModal('modal-service'); }
+  function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3000); }
+  function demanderRdv() { const nom = document.getElementById('rdv-nom').value.trim(); const tel = document.getElementById('rdv-tel').value.trim(); if (!nom || !tel) { showToast('⚠️ Veuillez remplir nom et téléphone'); return; } showToast('📅 Demande envoyée ! Martine vous rappelle.'); document.getElementById('rdv-nom').value = ''; document.getElementById('rdv-tel').value = ''; document.getElementById('rdv-msg').value = ''; }
+  function confirmerRDVModal() { const nom = document.getElementById('modal-nom').value.trim(); const tel = document.getElementById('modal-tel').value.trim(); if (!nom || !tel) { showToast('⚠️ Veuillez indiquer nom et téléphone'); return; } showToast('📞 RDV demandé'); closeModal('modal-rdv'); }
+  const observer = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in-up').forEach(el => el.classList.add('visible'));
 </script>
 </body>
 </html>
